@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\CUARTO CICLOO\\testDBP\\test\\TestGitHub\\TestGitHub\\TestGitHub.csproj": {}
+    "C:\\Users\\mauri\\OneDrive\\Documentos\\GitHub\\test\\TestGitHub\\TestGitHub\\TestGitHub.csproj": {}
   },
   "projects": {
-    "D:\\CUARTO CICLOO\\testDBP\\test\\TestGitHub\\TestGitHub\\TestGitHub.csproj": {
+    "C:\\Users\\mauri\\OneDrive\\Documentos\\GitHub\\test\\TestGitHub\\TestGitHub\\TestGitHub.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CUARTO CICLOO\\testDBP\\test\\TestGitHub\\TestGitHub\\TestGitHub.csproj",
+        "projectUniqueName": "C:\\Users\\mauri\\OneDrive\\Documentos\\GitHub\\test\\TestGitHub\\TestGitHub\\TestGitHub.csproj",
         "projectName": "TestGitHub",
-        "projectPath": "D:\\CUARTO CICLOO\\testDBP\\test\\TestGitHub\\TestGitHub\\TestGitHub.csproj",
-        "packagesPath": "C:\\Users\\Jesus\\.nuget\\packages\\",
-        "outputPath": "D:\\CUARTO CICLOO\\testDBP\\test\\TestGitHub\\TestGitHub\\obj\\",
+        "projectPath": "C:\\Users\\mauri\\OneDrive\\Documentos\\GitHub\\test\\TestGitHub\\TestGitHub\\TestGitHub.csproj",
+        "packagesPath": "C:\\Users\\mauri\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mauri\\OneDrive\\Documentos\\GitHub\\test\\TestGitHub\\TestGitHub\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Jesus\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\mauri\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -49,7 +45,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -61,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
