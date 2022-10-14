@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "kNDIYePtoknU1K09BA9/Cgfm1aqy4jSZCKPUkJBwVGE=",
+  "Hash": "5akvJrPlf5zWkGKO4wh8V37ItrS0n6Lnr2i8JzJgfuk=",
   "Source": "TestGitHub",
   "BasePath": "_content/TestGitHub",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\mauri\\OneDrive\\Documentos\\GitHub\\test\\TestGitHub\\TestGitHub\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\TestGitHub.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\mauri\\OneDrive\\Documentos\\GitHub\\test\\TestGitHub\\TestGitHub\\wwwroot\\assets\\carrito.png",
+      "SourceId": "TestGitHub",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\mauri\\OneDrive\\Documentos\\GitHub\\test\\TestGitHub\\TestGitHub\\wwwroot\\",
+      "BasePath": "_content/TestGitHub",
+      "RelativePath": "assets/carrito.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\carrito.png"
     },
     {
       "Identity": "C:\\Users\\mauri\\OneDrive\\Documentos\\GitHub\\test\\TestGitHub\\TestGitHub\\wwwroot\\css\\diseñoMenu.css",
@@ -100,6 +117,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\estilosIndex.css"
+    },
+    {
+      "Identity": "C:\\Users\\mauri\\OneDrive\\Documentos\\GitHub\\test\\TestGitHub\\TestGitHub\\wwwroot\\css\\estilosRegistro.css",
+      "SourceId": "TestGitHub",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\mauri\\OneDrive\\Documentos\\GitHub\\test\\TestGitHub\\TestGitHub\\wwwroot\\",
+      "BasePath": "_content/TestGitHub",
+      "RelativePath": "css/estilosRegistro.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\estilosRegistro.css"
     },
     {
       "Identity": "C:\\Users\\mauri\\OneDrive\\Documentos\\GitHub\\test\\TestGitHub\\TestGitHub\\wwwroot\\css\\site.css",

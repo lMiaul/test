@@ -8,7 +8,10 @@ namespace TestGitHub.Controllers
         {
             return View();
         }
-
+        public IActionResult Registro()
+        {
+            return View();
+        }
         public IActionResult Menu()
         {
             return View();
@@ -34,5 +37,6 @@ namespace TestGitHub.Controllers
         {
             return View();
         }
+        
     }
 }
