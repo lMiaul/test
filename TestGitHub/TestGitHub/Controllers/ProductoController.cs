@@ -18,5 +18,21 @@ namespace TestGitHub.Controllers
         {
             return View();
         }
+        public IActionResult Mascotas()
+        {
+            return View();
+        }
+        public IActionResult Bebidas()
+        {
+            return View();
+        }
+        public IActionResult Medicamentos()
+        {
+            return View();
+        }
+        public IActionResult Higiene()
+        {
+            return View();
+        }
     }
 }
