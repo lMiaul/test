@@ -1,0 +1,135 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    background-image: linear-gradient(to top, #f5d298, #f4a297);
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+button {
+    border: 2px solid orange;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: orange;
+    cursor: pointer;
+}
+
+#_buscar {
+    position: relative;
+    top: 400px;
+    left: 400px;
+}
+
+#_abarrotes {
+    position: relative;
+    top: 280px;
+    left: 125px;
+}
+
+#_mascotas {
+    position: relative;
+    top: 500px;
+    left: 250px;
+}
+
+#_bebidas {
+    position: relative;
+    top: 30px;
+    left: 395px;
+}
+
+#_medicamentos {
+    position: relative;
+    top: 150px;
+    left: 650px;
+}
+
+#_higiene {
+    position: relative;
+    top: 370px;
+    left: 550px;
+}
+
+#_carrito {
+    position: relative;
+    top: -0px;
+    left: 1100px;
+}
+
+#_boleta {
+    position: relative;
+    top: 180px;
+    left: 1100px;
+}
+
+#img_abarrotes {
+    width: 150px;
+    position: relative;
+    top: -110px;
+    left: -50px;
+}
+
+#img_mascotas {
+    width: 150px;
+    position: relative;
+    top: 150px;
+    left: -75px;
+}
+
+#img_higiene {
+    width: 150px;
+    position: relative;
+    top: 150px;
+    left: 60px;
+}
+
+#img_medicamentos {
+    width: 150px;
+    position: relative;
+    top: -110px;
+    left: 30px;
+}
+
+#img_bebidas {
+    width: 150px;
+    position: relative;
+    top: -275px;
+    left: -405px;
+}
+
+#img_lupa {
+    width: 150px;
+    position: relative;
+    top: -40px;
+    left: -575px;
+}
+
+#img_boleta {
+    width: 150px;
+    position: relative;
+    top: 150px;
+    left: 10px;
+}
+
+#img_carrito {
+    width: 150px;
+    position: relative;
+    top: -200px;
+    left: -150px;
+}
+
+#btn_boleta {
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#btn_carrito {
+    border-radius: 50%;
+    cursor: pointer;
+}

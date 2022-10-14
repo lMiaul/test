@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "4kOYVjcAl+Y+twy4t6baf0Kyiw6EeJ3ENMOIN7lx4dw=",
+  "Hash": "kNDIYePtoknU1K09BA9/Cgfm1aqy4jSZCKPUkJBwVGE=",
   "Source": "TestGitHub",
   "BasePath": "_content/TestGitHub",
   "Mode": "Default",
@@ -49,6 +49,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\mauri\\OneDrive\\Documentos\\GitHub\\test\\TestGitHub\\TestGitHub\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\TestGitHub.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\mauri\\OneDrive\\Documentos\\GitHub\\test\\TestGitHub\\TestGitHub\\wwwroot\\css\\diseñoMenu.css",
+      "SourceId": "TestGitHub",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\mauri\\OneDrive\\Documentos\\GitHub\\test\\TestGitHub\\TestGitHub\\wwwroot\\",
+      "BasePath": "_content/TestGitHub",
+      "RelativePath": "css/diseñoMenu.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\diseñoMenu.css"
+    },
+    {
+      "Identity": "C:\\Users\\mauri\\OneDrive\\Documentos\\GitHub\\test\\TestGitHub\\TestGitHub\\wwwroot\\css\\estilos.css",
+      "SourceId": "TestGitHub",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\mauri\\OneDrive\\Documentos\\GitHub\\test\\TestGitHub\\TestGitHub\\wwwroot\\",
+      "BasePath": "_content/TestGitHub",
+      "RelativePath": "css/estilos.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\estilos.css"
     },
     {
       "Identity": "C:\\Users\\mauri\\OneDrive\\Documentos\\GitHub\\test\\TestGitHub\\TestGitHub\\wwwroot\\css\\estilosIndex.css",

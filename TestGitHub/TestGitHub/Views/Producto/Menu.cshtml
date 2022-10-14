@@ -1,0 +1,42 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/diseñoMenu.css">
+    <title>Menu</title>
+</head>
+<body>
+    <div>
+
+        <button type="submit" name="txtBuscar" id="_buscar" value="Buscar">Buscar</button><br>
+        <button asp-controller="Producto" asp-action="Abarrotes" type="submit" name="txtAbarrrotes" id="_abarrotes" value="Buscar">Abarrotes</button><br>
+        <button type="submit" name="txtMascotas" id="_mascotas" value="Buscar">Mascotas</button><br>
+        <button type="submit" name="txtBebidas" id="_bebidas" value="Buscar">Bebidas</button><br>
+        <button type="submit" name="txtMedicamentos" id="_medicamentos" value="Buscar">Medicamentos</button><br>
+        <button type="submit" name="txtHigiene" id="_higiene" value="Buscar">Higiene</button><br>
+        <label id="_carrito">Carrito de compras</label><br>
+        <label id="_boleta">Boleta electronica</label>
+        <img src="assets/abarrotes.png" id="img_abarrotes">
+        <img src="assets/mascotas.png" id="img_mascotas">
+        <img src="assets/higiene.png" id="img_higiene">
+        <img src="assets/medicamentos.png" id="img_medicamentos">
+        <img src="assets/bebidas.png" id="img_bebidas">
+        <img src="assets/lupa.png" id="img_lupa">
+        <a id="btn_boleta">
+            <img src="assets/boleta.png" id="img_boleta">
+        </a>
+        <a id="btn_carrito">
+            <img src="assets/carrito.png" id="img_carrito">
+        </a>
+
+    </div>
+</body>
+</html>

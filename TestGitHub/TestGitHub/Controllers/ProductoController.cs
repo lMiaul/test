@@ -8,5 +8,15 @@ namespace TestGitHub.Controllers
         {
             return View();
         }
+
+        public IActionResult Menu()
+        {
+            return View();
+        }
+
+        public IActionResult Abarrotes()
+        {
+            return View();
+        }
     }
 }

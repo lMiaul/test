@@ -1,0 +1,194 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fff;
+}
+
+.contenedor {
+    margin: auto;
+    margin-top: 25px;
+    width: 1400px;
+    height: 1000px;
+    background-color: #F5D298;
+}
+
+header {
+    width: 99.9%;
+    height: 300px;
+    display: flex;
+    background-color: #F5D298;
+    position: relative;
+}
+
+section {
+    width: 29.5%;
+    height: 700px;
+    display: inline-block;
+    background-color: #F5D298;
+}
+
+aside {
+    float: right;
+    width: 70.5%;
+    height: 700px;
+    background-color: #F5D298;
+}
+
+.a_back {
+    width: 100px;
+    height: 100px;
+    margin: 80px;
+}
+
+.btn_back {
+    width: 150px;
+    height: 150px;
+    margin-top: -20px;
+    margin-left: -20px;
+    float: left;
+    padding: 0;
+    cursor: pointer;
+    border: 5px solid #F5D298;
+    border-radius: 70%;
+}
+
+    .btn_back:hover {
+        border: 10px solid #F5D298;
+    }
+
+#img_abarrotes {
+    margin-left: 50px;
+    margin-top: 40px;
+    height: 200px;
+    width: 200px;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 90px;
+    font-size: 100px;
+    padding-left: 20px;
+    float: left;
+}
+
+.a_carrito {
+    width: 100px;
+    height: 100px;
+    margin: 80px;
+    margin-left: 120px;
+    top: 0;
+    right: 50px;
+    position: absolute;
+}
+
+.btn_carrito {
+    width: 220px;
+    height: 220px;
+    margin-top: -50px;
+    margin-left: -40px;
+    padding: 0;
+    cursor: pointer;
+    border: 5px solid #F5D298;
+    border-radius: 70%;
+}
+
+    .btn_carrito:hover {
+        border: 10px solid #F5D298;
+    }
+
+
+
+section .btn {
+    width: 350px;
+    height: 100px;
+    display: block;
+    margin: 2px auto;
+    font-size: 50px;
+    margin-top: 5px;
+    margin-top: 20px;
+    border-radius: 15px;
+    text-align: center;
+    padding-top: 18px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #000;
+    background-color: #F4A297;
+}
+
+.btn:hover {
+    color: #fff;
+    font-size: 55px;
+}
+
+#btn_pagina_actual {
+    background-color: #E07481;
+    border: 1px solid black;
+}
+
+table {
+    padding: 10px;
+}
+
+tr, td {
+    background-color: #F5D298;
+    text-align: center;
+    font-size: 40px;
+    padding: 0px;
+    padding-bottom: 100px;
+    padding-top: 60px;
+}
+
+input {
+    width: 60px;
+    font-size: 30px;
+    text-align: right;
+    background-color: #F5D298;
+    border: none;
+}
+
+.descripcion {
+    width: 600px;
+}
+
+.cantidades {
+    width: 180px;
+}
+
+.agregar {
+    width: 160px;
+}
+
+.btn_productos {
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    background-color: #E07481;
+    font-weight: bold;
+    font-size: 40px;
+    cursor: pointer;
+    border-radius: 30%;
+}
+
+    .btn_productos:hover {
+        background-color: #F4A297;
+    }
+
+.btn_agregar {
+    font-size: 25px;
+    border: 2px solid #E07481;
+    border-radius: 20px;
+    padding: 12px 30px;
+    background-color: #F4A297;
+}
+
+    .btn_agregar:hover {
+        background-color: #E07481;
+    }
+
+.h1_actual {
+    font-size: 90px;
+}
