@@ -3,3 +3,71 @@
 *@
 @{
 }
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Bebidas</title>
+</head>
+<body>
+    <div class="contenedor">
+        <header>
+            <a class="a_back" href="javascript: history.go(-1)">
+                <img class="btn_back" src="img/back.png" />
+            </a>
+
+            <img id="img_abarrotes" src="img/bebidas.PNG">
+            <h1>
+                Bebidas
+            </h1>
+
+            <a href="http://www.google.com" class="a_carrito">
+                <img class="btn_carrito" src="img/compras.png">
+            </a>
+        </header>
+        <section class="categorias">
+            <a href="abarrotes.html" class="btn">Abarrotes</a>
+            <a href="bebidas.html" class="btn" id="btn_pagina_actual">Bebidas</a>
+            <a href="medicamentos.html" class="btn">Medicamentos</a>
+            <a href="higiene.html" class="btn">Higiene</a>
+            <a href="mascotas.html" class="btn">Mascotas</a>
+        </section>
+        <aside class="principal">
+            <table class="tabla">
+                <tr class="filas">
+                    <td class="descripcion">Gaseosa Inka cola 500ml. - s/2.50</td>
+                    <td>
+                        <button class="btn_productos">-</button>
+                        <input value="1" type="number">
+                        <button class="btn_productos">+</button>
+                    </td>
+                    <td class="agregar"><button class="btn_agregar">Añadir</button></td>
+                </tr>
+                <tr class="filas">
+                    <td class="descripcion">Gaseosa Coca cola 500ml s/2.50</td>
+                    <td class="cantidades">
+                        <button class="btn_productos">-</button>
+                        <input value="1" type="number">
+                        <button class="btn_productos">+</button>
+                    </td>
+                    <td class="agregar"><button class="btn_agregar">Añadir</button></td>
+                </tr>
+                <tr class="filas">
+                    <td class="descripcion">Agua San Luis 500ml - s/2.00</td>
+                    <td>
+                        <button class="btn_productos">-</button>
+                        <input value="1" type="number">
+                        <button class="btn_productos">+</button>
+                    </td>
+                    <td class="agregar"><button class="btn_agregar">Añadir</button></td>
+                </tr>
+            </table>
+        </aside>
+    </div>
+
+</body>
+</html>
