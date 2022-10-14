@@ -27,8 +27,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cQWJhcnJvdGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/mauri/OneDrive/Documentos/GitHub/test/TestGitHub/TestGitHub/Views/Producto/Bebidas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cQmViaWRhcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mauri/OneDrive/Documentos/GitHub/test/TestGitHub/TestGitHub/Views/Producto/Higiene.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cSGlnaWVuZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/mauri/OneDrive/Documentos/GitHub/test/TestGitHub/TestGitHub/Views/Producto/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mauri/OneDrive/Documentos/GitHub/test/TestGitHub/TestGitHub/Views/Producto/Mascotas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cTWFzY290YXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mauri/OneDrive/Documentos/GitHub/test/TestGitHub/TestGitHub/Views/Producto/Medicamentos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cTWVkaWNhbWVudG9zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/mauri/OneDrive/Documentos/GitHub/test/TestGitHub/TestGitHub/Views/Producto/Menu.cshtml]
