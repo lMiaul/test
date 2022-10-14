@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "UHr7F2CKzBbHKBL60LkTptYuGDEo5xW7oo2M8mHNe5k=",
+  "Hash": "4kOYVjcAl+Y+twy4t6baf0Kyiw6EeJ3ENMOIN7lx4dw=",
   "Source": "TestGitHub",
   "BasePath": "_content/TestGitHub",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\mauri\\OneDrive\\Documentos\\GitHub\\test\\TestGitHub\\TestGitHub\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\TestGitHub.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\mauri\\OneDrive\\Documentos\\GitHub\\test\\TestGitHub\\TestGitHub\\wwwroot\\css\\estilosIndex.css",
+      "SourceId": "TestGitHub",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\mauri\\OneDrive\\Documentos\\GitHub\\test\\TestGitHub\\TestGitHub\\wwwroot\\",
+      "BasePath": "_content/TestGitHub",
+      "RelativePath": "css/estilosIndex.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\estilosIndex.css"
     },
     {
       "Identity": "C:\\Users\\mauri\\OneDrive\\Documentos\\GitHub\\test\\TestGitHub\\TestGitHub\\wwwroot\\css\\site.css",
