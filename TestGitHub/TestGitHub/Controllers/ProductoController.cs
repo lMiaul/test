@@ -37,6 +37,9 @@ namespace TestGitHub.Controllers
         {
             return View();
         }
-        
+        public IActionResult Boleta()
+        {
+            return View();
+        }
     }
 }
