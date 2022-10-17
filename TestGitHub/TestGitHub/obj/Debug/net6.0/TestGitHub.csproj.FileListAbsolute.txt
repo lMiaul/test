@@ -50,3 +50,13 @@ D:\CUARTO CICLOO\testDBP\test\TestGitHub\TestGitHub\obj\Debug\net6.0\refint\Test
 D:\CUARTO CICLOO\testDBP\test\TestGitHub\TestGitHub\obj\Debug\net6.0\TestGitHub.pdb
 D:\CUARTO CICLOO\testDBP\test\TestGitHub\TestGitHub\obj\Debug\net6.0\TestGitHub.genruntimeconfig.cache
 D:\CUARTO CICLOO\testDBP\test\TestGitHub\TestGitHub\obj\Debug\net6.0\ref\TestGitHub.dll
+C:\Users\mauri\OneDrive\Documentos\GitHub\test\TestGitHub\TestGitHub\bin\Debug\net6.0\Humanizer.dll
+C:\Users\mauri\OneDrive\Documentos\GitHub\test\TestGitHub\TestGitHub\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\mauri\OneDrive\Documentos\GitHub\test\TestGitHub\TestGitHub\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\mauri\OneDrive\Documentos\GitHub\test\TestGitHub\TestGitHub\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\mauri\OneDrive\Documentos\GitHub\test\TestGitHub\TestGitHub\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\mauri\OneDrive\Documentos\GitHub\test\TestGitHub\TestGitHub\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\mauri\OneDrive\Documentos\GitHub\test\TestGitHub\TestGitHub\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\mauri\OneDrive\Documentos\GitHub\test\TestGitHub\TestGitHub\bin\Debug\net6.0\MySqlConnector.dll
+C:\Users\mauri\OneDrive\Documentos\GitHub\test\TestGitHub\TestGitHub\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\mauri\OneDrive\Documentos\GitHub\test\TestGitHub\TestGitHub\obj\Debug\net6.0\TestGitHub.csproj.CopyComplete
