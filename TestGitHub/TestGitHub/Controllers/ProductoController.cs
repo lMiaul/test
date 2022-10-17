@@ -41,5 +41,9 @@ namespace TestGitHub.Controllers
         {
             return View();
         }
+        public IActionResult AddCliente()
+        {
+            return RedirectToAction("Index");
+        }
     }
 }
