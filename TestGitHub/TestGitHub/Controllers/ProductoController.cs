@@ -46,6 +46,11 @@ namespace TestGitHub.Controllers
         {
             return View();
         }
+        public IActionResult ListarClientes()
+        {
+            var list = Context.Clientes;
+            return View(list);
+        }
         public IActionResult AddCliente(Cliente obj)
         {
             if (ModelState.IsValid)
