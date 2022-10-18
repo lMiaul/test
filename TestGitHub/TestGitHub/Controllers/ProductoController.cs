@@ -46,6 +46,8 @@ namespace TestGitHub.Controllers
         {
             return View();
         }
+
+        [Route("cliente/ope/listar")]
         public IActionResult ListarClientes()
         {
             var list = Context.Clientes;
