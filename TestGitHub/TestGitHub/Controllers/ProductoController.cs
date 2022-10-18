@@ -4,6 +4,11 @@ namespace TestGitHub.Controllers
 {
     public class ProductoController : Controller
     {
+        private readonly bdproductoContext Context;
+        public ProductoController(bdproductoContext context)
+        {
+            Context = context;  
+        }
         public IActionResult Index()
         {
             return View();
@@ -41,9 +46,19 @@ namespace TestGitHub.Controllers
         {
             return View();
         }
-        public IActionResult AddCliente()
+        public IActionResult AddCliente(Cliente obj)
         {
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                Context.Clientes.Add(obj);
+                Context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View("Registro");
+            }
+            
         }
     }
 }
