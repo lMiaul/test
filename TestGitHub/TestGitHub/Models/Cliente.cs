@@ -5,6 +5,7 @@ namespace TestGitHub.Models
 {
     public partial class Cliente
     {
+
         public uint IdCliente { get; set; }
         public string NombreCliente { get; set; } = null!;
         public string ApellidosCliente { get; set; } = null!;

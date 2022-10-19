@@ -1,32 +1,5 @@
-﻿@model IEnumerable<TestGitHub.Models.Cliente>
-@*
+﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
 }
-
-<html>
-    <body>
-        <table class="table table-bordered">
-            <tr>
-                <td scope="col">ID</td>
-                <td scope="col">Nombres</td>
-                <td scope="col">Apellido</td>
-                <td scope="col">Editar</td>
-                <td scope="col">Eliminar</td>
-            </tr>
-            <tbody>
-            @foreach(var item in Model)
-            {
-                <tr>
-                    <td scope="col">@item.IdCliente</td>
-                    <td scope="col">@item.NombreCliente</td>
-                    <td scope="col">@item.ApellidosCliente</td>
-                    <td scope="col"><a asp-action="#" asp-route-id="@item.IdCliente">Editar</a></td>
-                    <td scope="col"><a asp-action="#" asp-route-id="@item.IdCliente">Eliminar</a></td>
-                </tr>
-            }
-            </tbody>
-        </table>
-    </body>
-</html>
