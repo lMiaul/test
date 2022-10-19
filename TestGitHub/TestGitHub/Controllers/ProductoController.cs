@@ -54,6 +54,7 @@ namespace TestGitHub.Controllers
         {
             return View();
         }
+        [HttpGet]
         [Route("cliente/ope/listar")]
         public IActionResult ListarClientes()
         {
