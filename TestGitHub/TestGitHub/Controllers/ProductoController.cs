@@ -42,6 +42,14 @@ namespace TestGitHub.Controllers
         {
             return View();
         }
+        public IActionResult CarritoDeCompra()
+        {
+            return View();
+        }
+        public IActionResult Validar()
+        {
+            return View();
+        }
         public IActionResult Boleta()
         {
             return View();
@@ -67,5 +75,6 @@ namespace TestGitHub.Controllers
             }
             
         }
+        
     }
 }
