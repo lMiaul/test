@@ -75,6 +75,9 @@ namespace TestGitHub.Controllers
             }
             
         }
-        
+        public IActionResult EditCliente()
+        {
+
+        }
     }
 }
