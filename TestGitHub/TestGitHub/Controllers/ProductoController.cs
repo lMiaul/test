@@ -84,5 +84,32 @@ namespace TestGitHub.Controllers
 
             return View(Obj);
         }
+        public IActionResult Edit(Alumno ObjNew)
+        {
+            if (ModelState.IsValid)
+            {
+                var ObjOld = (from Tcliente in Context.Clientes
+                              where Tcliente.IdCliente == ObjNew.IdCliente
+                              select Tcliente).Single();
+
+                ObjOld.IdCliente = ObjNew.IdCliente;
+                ObjOld.NombreCliente = ObjNew.NombreCliente;
+                ObjOld.ApellidosCliente = ObjNew.ApellidosCliente;
+                ObjOld.EdadCliente = ObjNew.EdadCliente;
+                ObjOld.TelefonoCliente = ObjNew.TelefonoCliente;
+                ObjOld.DireccionCliente = ObjNew.DireccionCliente;
+                ObjOld.EmailCliente = ObjNew.EmailCliente;
+
+                Context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View("Edit");
+            }
+
+
+            return RedirectToAction("index");
+        }
     }
 }
