@@ -46,13 +46,13 @@ namespace TestGitHub.Controllers
         {
             return View();
         }
-
         [Route("cliente/ope/listar")]
         public IActionResult ListarClientes()
         {
             var list = Context.Clientes;
-            return View(list);
+            return View("list");
         }
+   
         public IActionResult AddCliente(Cliente obj)
         {
             if (ModelState.IsValid)
