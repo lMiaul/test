@@ -43,7 +43,7 @@
 
                 <input asp-for="ContraCliente" class="controls" type="password" name="correo" id="correo" placeholder="Cree una contraseña">
                 <span asp-validation-for="ContraCliente" class="text-danger"></span>
-                <div class="btn shadow-lg p-3 w-100" style="background-color: #f5d298">
+                <div asp-controller="Producto" asp-action="AddCliente" class="btn shadow-lg p-3 w-100" style="background-color: #f5d298">
                     INGRESAR
                 </div>
             </form>
