@@ -76,9 +76,13 @@ namespace TestGitHub.Controllers
             }
             
         }
-        public IActionResult EditarClientes()
+        public IActionResult EditarClientes(int Codigo)
         {
-            return View("ListarClientes");
+            var Obj = (from Tcliente in Context.Clientes
+                       where Tcliente.IdCliente == Codigo
+                       select Tcliente).Single();
+
+            return View(Obj);
         }
     }
 }
