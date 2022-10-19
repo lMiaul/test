@@ -50,7 +50,7 @@ namespace TestGitHub.Controllers
         public IActionResult ListarClientes()
         {
             var list = Context.Clientes;
-            return View("list");
+            return View(list);
         }
    
         public IActionResult AddCliente(Cliente obj)
