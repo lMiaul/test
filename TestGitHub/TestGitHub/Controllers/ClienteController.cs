@@ -16,6 +16,20 @@ namespace TestGitHub.Controllers
             var list = Context.Clientes;
             return View(list);
         }
+        public IActionResult AddCliente(Cliente obj)
+        {
+            if (ModelState.IsValid)
+            {
+                Context.Clientes.Add(obj);
+                Context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View("Registro");
+            }
+
+        }
         [Route("Cliente/Edit/{Codigo}")]
         public IActionResult Edit(int codigo)
         {
@@ -49,6 +63,16 @@ namespace TestGitHub.Controllers
             {
                 return View("Edit");
             }
+        }
+        [Route("cliente/Delete/{Codigo}")]
+        public IActionResult Delete(int Codigo)
+        {
+            var Obj = (from Tcliente in Context.Clientes
+                       where Tcliente.IdCliente == Codigo
+                       select Tcliente).Single();
+            Context.Clientes.Remove(Obj);
+            Context.SaveChanges();
+            return RedirectToAction("ListarClientes");
         }
 
     }

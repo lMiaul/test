@@ -56,30 +56,8 @@ namespace TestGitHub.Controllers
         }
         
    
-        public IActionResult AddCliente(Cliente obj)
-        {
-            if (ModelState.IsValid)
-            {
-                Context.Clientes.Add(obj);
-                Context.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            else
-            {
-                return View("Registro");
-            }
-            
-        }
 
-        [Route("cliente/Delete/{Codigo}")]
-        public IActionResult Delete(string Codigo)
-        {
-            var Obj = (from Tcliente in Context.Clientes
-                       where Tcliente.IdCliente == Codigo
-                       select Tcliente).Single();
-            Context.Clientes.Remove(Obj);
-            Context.SaveChanges();
-            return RedirectToAction("Listar");
-        }
+
+        
     }
 }

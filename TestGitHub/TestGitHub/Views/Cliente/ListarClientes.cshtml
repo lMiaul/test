@@ -8,6 +8,7 @@
 <html>
     <body>
         <table class="table table-bordered">
+            <h1><a asp-controller="Cliente" asp-action="AddCliente">Añadir Cliente</a></h1>
             <tr>
                 <td scope="col">ID</td>
                 <td scope="col">Nombres</td>
@@ -23,7 +24,7 @@
                     <td scope="col">@item.NombreCliente</td>
                     <td scope="col">@item.ApellidosCliente</td>
                     <td scope="col"><a asp-action="Edit" asp-route-id="@item.IdCliente">Editar</a></td>
-                    <td scope="col"><a asp-action="#" asp-route-id="@item.IdCliente">Eliminar</a></td>
+                    <td scope="col"><a asp-action="Delete" asp-route-id="@item.IdCliente">Eliminar</a></td>
                 </tr>
             }
             </tbody>
