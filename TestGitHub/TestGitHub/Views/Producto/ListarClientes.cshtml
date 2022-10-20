@@ -22,7 +22,7 @@
                     <td scope="col">@item.IdCliente</td>
                     <td scope="col">@item.NombreCliente</td>
                     <td scope="col">@item.ApellidosCliente</td>
-                    <td scope="col"><a asp-controller="Producto" asp-action="EditarClientes" asp-route-id="@item.IdCliente">Editar</a></td>
+                    <td scope="col"><a asp-action="Edit" asp-route-id="@item.IdCliente">Editar</a></td>
                     <td scope="col"><a asp-action="#" asp-route-id="@item.IdCliente">Eliminar</a></td>
                 </tr>
             }

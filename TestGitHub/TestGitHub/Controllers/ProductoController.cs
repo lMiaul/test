@@ -76,15 +76,17 @@ namespace TestGitHub.Controllers
             }
             
         }
-        public IActionResult EditarClientes(int Codigo)
+        [Route("Producto/Edit/{Codigo}")]
+        public IActionResult Edit(int codigo)
         {
+
             var Obj = (from Tcliente in Context.Clientes
-                       where Tcliente.IdCliente == Codigo
+                       where Tcliente.IdCliente == codigo
                        select Tcliente).Single();
 
             return View(Obj);
         }
-        public IActionResult Edit(Alumno ObjNew)
+        public IActionResult EditarClientes(Cliente ObjNew)
         {
             if (ModelState.IsValid)
             {
@@ -101,15 +103,13 @@ namespace TestGitHub.Controllers
                 ObjOld.EmailCliente = ObjNew.EmailCliente;
 
                 Context.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("ListarClientes");
             }
             else
             {
-                return View("Edit");
+                return View("EditarClientes");
             }
-
-
-            return RedirectToAction("index");
         }
+        
     }
 }
