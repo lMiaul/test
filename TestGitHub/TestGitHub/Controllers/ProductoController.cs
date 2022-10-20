@@ -70,5 +70,16 @@ namespace TestGitHub.Controllers
             }
             
         }
+
+        [Route("cliente/Delete/{Codigo}")]
+        public IActionResult Delete(string Codigo)
+        {
+            var Obj = (from Tcliente in Context.Clientes
+                       where Tcliente.IdCliente == Codigo
+                       select Tcliente).Single();
+            Context.Clientes.Remove(Obj);
+            Context.SaveChanges();
+            return RedirectToAction("Listar");
+        }
     }
 }
