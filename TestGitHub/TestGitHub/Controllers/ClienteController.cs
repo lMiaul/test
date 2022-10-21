@@ -9,6 +9,7 @@ namespace TestGitHub.Controllers
         {
             Context = context;
         }
+
         [HttpGet]
         [Route("cliente/ope/listar")]
         public IActionResult ListarClientes()
@@ -16,6 +17,7 @@ namespace TestGitHub.Controllers
             var list = Context.Clientes;
             return View(list);
         }
+
         public IActionResult AddCliente(Cliente obj)
         {
             if (ModelState.IsValid)
@@ -30,6 +32,7 @@ namespace TestGitHub.Controllers
             }
 
         }
+
         [Route("Cliente/Edit/{Codigo}")]
         public IActionResult Edit(int codigo)
         {
