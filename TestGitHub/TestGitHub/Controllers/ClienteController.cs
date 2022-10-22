@@ -9,7 +9,10 @@ namespace TestGitHub.Controllers
         {
             Context = context;
         }
-
+        public IActionResult Index()
+        {
+            return View();
+        }
         [HttpGet]
         [Route("cliente/ope/listar")]
         public IActionResult ListarClientes()
