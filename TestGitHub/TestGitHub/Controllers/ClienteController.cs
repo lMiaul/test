@@ -81,5 +81,16 @@ namespace TestGitHub.Controllers
             return RedirectToAction("ListarClientes");
         }
 
+        public IActionResult ValidarCliente(Cliente cliente)
+        {
+            if (ModelState.IsValid)
+            {
+                return RedirectToAction("Menu", "Producto");
+            }
+            else
+            {
+                return View("Index");
+            }
+        }
     }
 }
