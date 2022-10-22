@@ -7,8 +7,13 @@
 
 <html>
     <body>
+        <h1><a asp-controller="Cliente" asp-action="AddCliente">Añadir Cliente</a></h1>
+        <h2>
+            Buscar<input type="text" class="form-control" id="myInput" placeholder="Search..." />
+        </h2>
         <table class="table table-bordered">
-            <h1><a asp-controller="Cliente" asp-action="AddCliente">Añadir Cliente</a></h1>
+            
+            
             <tr>
                 <td scope="col">ID</td>
                 <td scope="col">Nombres</td>
@@ -16,7 +21,7 @@
                 <td scope="col">Editar</td>
                 <td scope="col">Eliminar</td>
             </tr>
-            <tbody>
+            <tbody id="myTable">
             @foreach(var item in Model)
             {
                 <tr>
