@@ -25,7 +25,7 @@
         <div>
             <h3 class="text-center fs-1 fw-bold">FAST</h3>
         </div>
-        <form class="form-signin" action="/Producto/Menu" method="post">
+        <form class="form-signin" action="/Cliente/ValidarCliente" method="post">
             <input type="text" asp-for="EmailCliente" class="form-control" placeholder="Ingrese su correo electronico"
                    id="username" />
             <span asp-validation-for="EmailCliente" class="text-danger"></span>
@@ -36,7 +36,7 @@
                 <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Sign in
             </button>
         </form>
-        <!--<div>
+    <!--<div>
             <div>
                 <input class="justify-content-center align-items-center" type="text" placeholder=" Usuario" id="usu" required>
             </div>

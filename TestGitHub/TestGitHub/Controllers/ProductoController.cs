@@ -19,7 +19,16 @@ namespace TestGitHub.Controllers
         }
         public IActionResult Menu()
         {
-            return View();
+            var ObjSesion = HttpContext.Session.GetString("scliente");
+            if (ObjSesion != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Index","Cliente");
+            }
+            
         }
 
         public IActionResult Abarrotes()

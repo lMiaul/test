@@ -96,3 +96,7 @@ C:\Users\maris\OneDrive\Documentos\GitHub\test\TestGitHub\TestGitHub\obj\Debug\n
 C:\Users\maris\OneDrive\Documentos\GitHub\test\TestGitHub\TestGitHub\obj\Debug\net6.0\TestGitHub.pdb
 C:\Users\maris\OneDrive\Documentos\GitHub\test\TestGitHub\TestGitHub\obj\Debug\net6.0\TestGitHub.genruntimeconfig.cache
 C:\Users\maris\OneDrive\Documentos\GitHub\test\TestGitHub\TestGitHub\obj\Debug\net6.0\ref\TestGitHub.dll
+C:\Users\mauri\OneDrive\Documentos\GitHub\test\TestGitHub\TestGitHub\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\mauri\OneDrive\Documentos\GitHub\test\TestGitHub\TestGitHub\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\mauri\OneDrive\Documentos\GitHub\test\TestGitHub\TestGitHub\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\mauri\OneDrive\Documentos\GitHub\test\TestGitHub\TestGitHub\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll

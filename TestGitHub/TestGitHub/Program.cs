@@ -4,7 +4,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromSeconds(3600);
+});
 /*Cadena de conexion*/
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<bdproductoContext>(options =>
@@ -30,7 +33,7 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-
+app.UseSession();
 
 app.MapControllerRoute(
     name: "default",

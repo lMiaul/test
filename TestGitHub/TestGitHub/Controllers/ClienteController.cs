@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-
+using Newtonsoft.Json;
 namespace TestGitHub.Controllers
 {
     public class ClienteController : Controller
@@ -85,7 +85,19 @@ namespace TestGitHub.Controllers
         {
             if (ModelState.IsValid)
             {
-                return RedirectToAction("Menu", "Producto");
+                var Obj = (from TCliente in Context.Clientes
+                           where TCliente.EmailCliente == cliente.EmailCliente
+                           && TCliente.ContraCliente == cliente.ContraCliente
+                           select TCliente).FirstOrDefault();
+                if (Obj == null)
+                {
+                    return View("Index");
+                }
+                else
+                {
+                    //HttpContext.Session.SetString("scliente", JsonConvert.SerializeObject(cliente));
+                    return RedirectToAction("Menu", "Producto");
+                }
             }
             else
             {
