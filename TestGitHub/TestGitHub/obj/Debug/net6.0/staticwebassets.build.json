@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "7Mnrbvc5CYg+KdWyzZqdpTogk13SMpvIalb0Gu6ysgk=",
+  "Hash": "QUkUyel7o21292QVP1vUE36tKtxi9G5mYJAFr/611sg=",
   "Source": "TestGitHub",
   "BasePath": "_content/TestGitHub",
   "Mode": "Default",
@@ -272,6 +272,23 @@
       "OriginalItemSpec": "wwwroot\\css\\estilos.css"
     },
     {
+      "Identity": "C:\\Users\\mauri\\OneDrive\\Documentos\\GitHub\\test\\TestGitHub\\TestGitHub\\wwwroot\\css\\estilosCarritoCompras.css",
+      "SourceId": "TestGitHub",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\mauri\\OneDrive\\Documentos\\GitHub\\test\\TestGitHub\\TestGitHub\\wwwroot\\",
+      "BasePath": "_content/TestGitHub",
+      "RelativePath": "css/estilosCarritoCompras.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\estilosCarritoCompras.css"
+    },
+    {
       "Identity": "C:\\Users\\mauri\\OneDrive\\Documentos\\GitHub\\test\\TestGitHub\\TestGitHub\\wwwroot\\css\\estilosIndex.css",
       "SourceId": "TestGitHub",
       "SourceType": "Discovered",
@@ -304,6 +321,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\estilosRegistro.css"
+    },
+    {
+      "Identity": "C:\\Users\\mauri\\OneDrive\\Documentos\\GitHub\\test\\TestGitHub\\TestGitHub\\wwwroot\\css\\estilosValidarCompra.css",
+      "SourceId": "TestGitHub",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\mauri\\OneDrive\\Documentos\\GitHub\\test\\TestGitHub\\TestGitHub\\wwwroot\\",
+      "BasePath": "_content/TestGitHub",
+      "RelativePath": "css/estilosValidarCompra.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\estilosValidarCompra.css"
     },
     {
       "Identity": "C:\\Users\\mauri\\OneDrive\\Documentos\\GitHub\\test\\TestGitHub\\TestGitHub\\wwwroot\\css\\site.css",

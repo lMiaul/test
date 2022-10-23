@@ -22,49 +22,47 @@
     <body>
         <section class="form-register text-center">
             <h4 style="font-family: 'Inter Tight'; font-weight:900">Formulario Registro</h4>
-            <form asp-controller="Cliente" asp-action="AddCliente" method="post">
-                <div class="form-group">
-                    <label for="formGroupExampleInput">Nombre</label>
-                    <input asp-for="NombreCliente" class="controls" type="text" name="nombres" id="nombres" placeholder="Ingrese su nombre">
-                    <span asp-validation-for="NombreCliente" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label for="formGroupExampleInput">Apellidos</label>
-                    <input asp-for="ApellidosCliente" class="controls" type="text" name="apellidos" id="apellidos" placeholder="Ingrese sus apellidos">
-                    <span asp-validation-for="ApellidosCliente" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label for="formGroupExampleInput">Edad</label>
-                    <input asp-for="EdadCliente" class="controls" type="text" name="edad" id="edad" placeholder="Ingrese su edad">
-                    <span asp-validation-for="EdadCliente" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label for="formGroupExampleInput">Telefono</label>
-                    <input asp-for="TelefonoCliente" class="controls" type="text" name="telefono" id="telefono" placeholder="Ingrese su telefono">
-                    <span asp-validation-for="TelefonoCliente" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label for="formGroupExampleInput">Direccion</label>
-                    <input asp-for="DireccionCliente" class="controls" type="text" name="direccion" id="direccion" placeholder="Ingrese su direccion">
-                    <span asp-validation-for="DireccionCliente" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label for="formGroupExampleInput">Email</label>
-                    <input asp-for="EmailCliente" class="controls" type="text" name="correo" id="correo" placeholder="Ingrese su correo">
-                    <span asp-validation-for="EmailCliente" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label for="formGroupExampleInput">Contraseña</label>
-                    <input asp-for="ContraCliente" class="controls" type="password" name="contra" id="correo" placeholder="Cree una contraseña">
-                    <span asp-validation-for="ContraCliente" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary" value="btn" name="grabar" data-toggle="modal" data-target="#exampleModal">Grabar</button>
-                </div>
-                @*<div class="btn shadow-lg p-3 w-100" style="background-color: #f5d298">
-                    INGRESAR
-                </div>*@
-            </form>
+                <form asp-controller="Cliente" asp-action="AddCliente" method="post">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Nombre</label>
+                        <input asp-for="NombreCliente" class="controls" id="formGroupExampleInput" type="text" name="nombres" id="nombres" placeholder="Ingrese su nombre">
+                        <span asp-validation-for="NombreCliente" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput2">Apellidos</label>
+                        <input asp-for="ApellidosCliente" class="controls" id="formGroupExampleInput2" type="text" name="apellidos" id="apellidos" placeholder="Ingrese sus apellidos">
+                        <span asp-validation-for="ApellidosCliente" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput2">Edad</label>
+                        <input asp-for="EdadCliente" class="controls" id="formGroupExampleInput2" type="text" name="edad" id="edad" placeholder="Ingrese su edad">
+                        <span asp-validation-for="EdadCliente" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput2">Telefono</label>
+                        <input asp-for="TelefonoCliente" class="controls" id="formGroupExampleInput2" type="text" name="telefono" id="telefono" placeholder="Ingrese su telefono">
+                        <span asp-validation-for="TelefonoCliente" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput2">Direccion</label>
+                        <input asp-for="DireccionCliente" class="controls" id="formGroupExampleInput2" type="text" name="direccion" id="direccion" placeholder="Ingrese su direccion">
+                        <span asp-validation-for="DireccionCliente" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput2">Email</label>
+                        <input asp-for="EmailCliente" class="controls" id="formGroupExampleInput2" type="text" name="correo" id="correo" placeholder="Ingrese su correo">
+                        <span asp-validation-for="EmailCliente" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput2">Contraseña</label>
+                        <input asp-for="ContraCliente" class="controls" id="formGroupExampleInput2" type="password" name="contra" id="correo" placeholder="Cree una contraseña">
+                        <span asp-validation-for="ContraCliente" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary" value="btn" name="grabar" data-toggle="modal" data-target="#exampleModal">Grabar</button>
+                    </div>
+                    
+                </form>
             <p><a href="#" class="fw-semibold fst-italic" style="color:black">¿Ya tiene una cuenta?</a></p>
         </section>
     </body>

@@ -20,7 +20,10 @@ namespace TestGitHub.Controllers
             var list = Context.Clientes;
             return View(list);
         }
-
+        public IActionResult Registro()
+        {
+            return View();
+        }
         public IActionResult AddCliente(Cliente obj)
         {
             if (ModelState.IsValid)
