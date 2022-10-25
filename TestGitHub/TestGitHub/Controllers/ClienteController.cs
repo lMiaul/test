@@ -14,7 +14,7 @@ namespace TestGitHub.Controllers
             return View();
         }
         [HttpGet]
-        [Route("cliente/ope/listar")]
+        [Route("Cliente/ope/listar")]
         public IActionResult ListarClientes()
         {
             var list = Context.Clientes;
@@ -24,7 +24,7 @@ namespace TestGitHub.Controllers
         {
             return View();
         }
-        public IActionResult AddCliente(Cliente obj)
+        public IActionResult RegistrarCliente(Cliente obj)
         {
             if (ModelState.IsValid)
             {

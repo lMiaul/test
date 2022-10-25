@@ -13,7 +13,7 @@ namespace TestGitHub.Models
         
         public string ApellidosCliente { get; set; } = null!;
         
-        public int EdadCliente { get; set; }
+        public int EdadCliente { get; set; } 
         
         public int TelefonoCliente { get; set; }
         
