@@ -28,7 +28,6 @@ namespace TestGitHub.Controllers
             {
                 return RedirectToAction("Index","Cliente");
             }
-            
         }
 
         public IActionResult Abarrotes()
