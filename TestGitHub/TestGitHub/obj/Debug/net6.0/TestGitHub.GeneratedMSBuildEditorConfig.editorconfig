@@ -8,93 +8,93 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = TestGitHub
 build_property.RootNamespace = TestGitHub
-build_property.ProjectDir = C:\Users\mauri\OneDrive\Documentos\GitHub\test\TestGitHub\TestGitHub\
+build_property.ProjectDir = C:\Users\maris\source\repos\lMiaul\test\TestGitHub\TestGitHub\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\mauri\OneDrive\Documentos\GitHub\test\TestGitHub\TestGitHub
+build_property.MSBuildProjectDirectory = C:\Users\maris\source\repos\lMiaul\test\TestGitHub\TestGitHub
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/mauri/OneDrive/Documentos/GitHub/test/TestGitHub/TestGitHub/Views/Cliente/Create.cshtml]
+[C:/Users/maris/source/repos/lMiaul/test/TestGitHub/TestGitHub/Views/Cliente/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mauri/OneDrive/Documentos/GitHub/test/TestGitHub/TestGitHub/Views/Cliente/Edit.cshtml]
+[C:/Users/maris/source/repos/lMiaul/test/TestGitHub/TestGitHub/Views/Cliente/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mauri/OneDrive/Documentos/GitHub/test/TestGitHub/TestGitHub/Views/Cliente/Index.cshtml]
+[C:/Users/maris/source/repos/lMiaul/test/TestGitHub/TestGitHub/Views/Cliente/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mauri/OneDrive/Documentos/GitHub/test/TestGitHub/TestGitHub/Views/Cliente/ListarClientes.cshtml]
+[C:/Users/maris/source/repos/lMiaul/test/TestGitHub/TestGitHub/Views/Cliente/ListarClientes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxMaXN0YXJDbGllbnRlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mauri/OneDrive/Documentos/GitHub/test/TestGitHub/TestGitHub/Views/Cliente/Registro.cshtml]
+[C:/Users/maris/source/repos/lMiaul/test/TestGitHub/TestGitHub/Views/Cliente/Registro.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxSZWdpc3Ryby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mauri/OneDrive/Documentos/GitHub/test/TestGitHub/TestGitHub/Views/Home/Index.cshtml]
+[C:/Users/maris/source/repos/lMiaul/test/TestGitHub/TestGitHub/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mauri/OneDrive/Documentos/GitHub/test/TestGitHub/TestGitHub/Views/Home/Privacy.cshtml]
+[C:/Users/maris/source/repos/lMiaul/test/TestGitHub/TestGitHub/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mauri/OneDrive/Documentos/GitHub/test/TestGitHub/TestGitHub/Views/Producto/Abarrotes.cshtml]
+[C:/Users/maris/source/repos/lMiaul/test/TestGitHub/TestGitHub/Views/Producto/Abarrotes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cQWJhcnJvdGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mauri/OneDrive/Documentos/GitHub/test/TestGitHub/TestGitHub/Views/Producto/Bebidas.cshtml]
+[C:/Users/maris/source/repos/lMiaul/test/TestGitHub/TestGitHub/Views/Producto/Bebidas.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cQmViaWRhcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mauri/OneDrive/Documentos/GitHub/test/TestGitHub/TestGitHub/Views/Producto/Boleta.cshtml]
+[C:/Users/maris/source/repos/lMiaul/test/TestGitHub/TestGitHub/Views/Producto/Boleta.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cQm9sZXRhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mauri/OneDrive/Documentos/GitHub/test/TestGitHub/TestGitHub/Views/Producto/CarritoDeCompra.cshtml]
+[C:/Users/maris/source/repos/lMiaul/test/TestGitHub/TestGitHub/Views/Producto/CarritoDeCompra.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cQ2Fycml0b0RlQ29tcHJhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mauri/OneDrive/Documentos/GitHub/test/TestGitHub/TestGitHub/Views/Producto/Higiene.cshtml]
+[C:/Users/maris/source/repos/lMiaul/test/TestGitHub/TestGitHub/Views/Producto/Higiene.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cSGlnaWVuZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mauri/OneDrive/Documentos/GitHub/test/TestGitHub/TestGitHub/Views/Producto/Mascotas.cshtml]
+[C:/Users/maris/source/repos/lMiaul/test/TestGitHub/TestGitHub/Views/Producto/Mascotas.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cTWFzY290YXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mauri/OneDrive/Documentos/GitHub/test/TestGitHub/TestGitHub/Views/Producto/Medicamentos.cshtml]
+[C:/Users/maris/source/repos/lMiaul/test/TestGitHub/TestGitHub/Views/Producto/Medicamentos.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cTWVkaWNhbWVudG9zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mauri/OneDrive/Documentos/GitHub/test/TestGitHub/TestGitHub/Views/Producto/Menu.cshtml]
+[C:/Users/maris/source/repos/lMiaul/test/TestGitHub/TestGitHub/Views/Producto/Menu.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cTWVudS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mauri/OneDrive/Documentos/GitHub/test/TestGitHub/TestGitHub/Views/Producto/Validar.cshtml]
+[C:/Users/maris/source/repos/lMiaul/test/TestGitHub/TestGitHub/Views/Producto/Validar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cVmFsaWRhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mauri/OneDrive/Documentos/GitHub/test/TestGitHub/TestGitHub/Views/Shared/Error.cshtml]
+[C:/Users/maris/source/repos/lMiaul/test/TestGitHub/TestGitHub/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mauri/OneDrive/Documentos/GitHub/test/TestGitHub/TestGitHub/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/maris/source/repos/lMiaul/test/TestGitHub/TestGitHub/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mauri/OneDrive/Documentos/GitHub/test/TestGitHub/TestGitHub/Views/_ViewImports.cshtml]
+[C:/Users/maris/source/repos/lMiaul/test/TestGitHub/TestGitHub/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mauri/OneDrive/Documentos/GitHub/test/TestGitHub/TestGitHub/Views/_ViewStart.cshtml]
+[C:/Users/maris/source/repos/lMiaul/test/TestGitHub/TestGitHub/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mauri/OneDrive/Documentos/GitHub/test/TestGitHub/TestGitHub/Views/Shared/_Layout.cshtml]
+[C:/Users/maris/source/repos/lMiaul/test/TestGitHub/TestGitHub/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-ao73dvcpbe
