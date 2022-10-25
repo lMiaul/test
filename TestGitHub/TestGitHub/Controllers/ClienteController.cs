@@ -98,7 +98,7 @@ namespace TestGitHub.Controllers
                 }
                 else
                 {
-                    //HttpContext.Session.SetString("scliente", JsonConvert.SerializeObject(cliente));
+                    HttpContext.Session.SetString("scliente", JsonConvert.SerializeObject(cliente));
                     return RedirectToAction("Menu", "Producto");
                 }
             }
