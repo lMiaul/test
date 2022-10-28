@@ -17,6 +17,7 @@ namespace TestGitHub.Models
         }
 
         public virtual DbSet<Cliente> Clientes { get; set; } = null!;
+        public virtual DbSet<Repartidor> Repartidors { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -71,6 +72,26 @@ namespace TestGitHub.Models
                 entity.Property(e => e.TelefonoCliente)
                     .HasColumnType("int(9)")
                     .HasColumnName("telefono_Cliente");
+            });
+
+            modelBuilder.Entity<Repartidor>(entity =>
+            {
+                entity.HasKey(e => e.IdRepartidor)
+                    .HasName("PRIMARY");
+
+                entity.ToTable("repartidor");
+
+                entity.Property(e => e.IdRepartidor)
+                    .HasColumnType("int(10) unsigned zerofill")
+                    .HasColumnName("id_Repartidor");
+
+                entity.Property(e => e.ApellidoRepartidor)
+                    .HasMaxLength(20)
+                    .HasColumnName("apellido_Repartidor");
+
+                entity.Property(e => e.NombreRepartidor)
+                    .HasMaxLength(20)
+                    .HasColumnName("nombre_Repartidor");
             });
 
             OnModelCreatingPartial(modelBuilder);
