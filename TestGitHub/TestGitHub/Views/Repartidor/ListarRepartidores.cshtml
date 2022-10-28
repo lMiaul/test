@@ -1,0 +1,44 @@
+﻿@model IEnumerable<TestGitHub.Models.Repartidor>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<html>
+    <body>
+        <h1><a asp-controller="Repartidor" asp-action="RegistrarRepartidor">Añadir repartidor</a></h1>
+        <h2>
+            Buscar<input type="text" class="form-control" id="myInput" placeholder="Search..." />
+        </h2>
+        <table class="table table-bordered">
+            <tr>
+                <td scope="col">ID</td>
+                <td scope="col">Nombres</td>
+                <td scope="col">Apellido</td>
+            </tr>
+            <tbody id="myTable">
+            @foreach(var item in Model)
+            {
+                <tr>
+                    <td scope="col">@item.IdRepartidor</td>
+                    <td scope="col">@item.NombreRepartidor</td>
+                    <td scope="col">@item.ApellidoRepartidor</td>
+                    <td scope="col"><a asp-action="Edit" asp-route-id="@item.IdRepartidor">Editar</a></td>
+                    <td scope="col"><a asp-action="Delete" asp-route-id="@item.IdRepartidor">Eliminar</a></td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </body>    
+</html>
+<script>
+    $(document).ready(function () {
+        $("#myInput").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>
