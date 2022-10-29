@@ -9,7 +9,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Registro de repartirdor</title>
+        <title>Editar repartirdores</title>
         <link rel="stylesheet" href="../css/estilosRegistro.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +17,12 @@
         <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100&display=swap" rel="stylesheet">
     </head>
     <body>
-        <form asp-controller="Repartidor" asp-action="RegistrarRepartidor" method="post">
+        <form asp-controller="Repartidor" asp-action="EditarRepartidores" method="post">
+            <div class="form-group">
+                <label hidden="hidden" for="formGroupExampleInput">Id</label>
+                <input hidden="hidden" asp-for="IdRepartidor" class="form-control" id="formGroupExampleInput" placeholder="Ingrese sus nombres">
+                <span hidden="hidden" asp-validation-for="IdRepartidor" class="text-danger"></span>
+            </div>
             <div class="form-group">
                 <label for="formGroupExampleInput">Nombres</label>
                 <input asp-for="NombreRepartidor" class="form-control" id="formGroupExampleInput" placeholder="Ingrese sus nombres">

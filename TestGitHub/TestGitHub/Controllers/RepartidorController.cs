@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Security.Cryptography.X509Certificates;
 
 namespace TestGitHub.Controllers
 {
@@ -35,6 +36,47 @@ namespace TestGitHub.Controllers
             {
                 return RedirectToAction("Registro");
             }
+        }
+        [Route("Repartidor/Edit/{codigo}")]
+        public IActionResult Edit(int codigo)
+        {
+            var Obj = (from TRepartidor in Context.Repartidors
+                       where TRepartidor.IdRepartidor == codigo
+                       select TRepartidor).Single();
+
+            return View(Obj);
+        }
+
+        public IActionResult EditarRepartidores(Repartidor ObjNew)
+        {
+            if (ModelState.IsValid)
+            {
+                var ObjOld = (from TRepartidor in Context.Repartidors
+                              where TRepartidor.IdRepartidor == ObjNew.IdRepartidor
+                              select TRepartidor).Single();
+
+                ObjOld.IdRepartidor = ObjNew.IdRepartidor;
+                ObjOld.NombreRepartidor = ObjNew.NombreRepartidor;
+                ObjOld.ApellidoRepartidor = ObjNew.ApellidoRepartidor;
+
+                Context.SaveChanges();
+                return RedirectToAction("ListarRepartidores");
+            }
+            else
+            {
+                return View("Edit");
+            }         
+        }
+        [Route("Repartidor/Delete/{Codigo}")]
+        public IActionResult Delete(int codigo)
+        {
+            var Obj = (from TRepartidor in Context.Repartidors
+                       where TRepartidor.IdRepartidor == codigo
+                       select TRepartidor).Single();
+
+            Context.Repartidors.Remove(Obj);
+            Context.SaveChanges();
+            return RedirectToAction("ListarRepartidores");
         }
     }
 }
