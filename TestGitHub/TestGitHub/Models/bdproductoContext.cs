@@ -16,7 +16,9 @@ namespace TestGitHub.Models
         {
         }
 
+        public virtual DbSet<Categorium> Categoria { get; set; } = null!;
         public virtual DbSet<Cliente> Clientes { get; set; } = null!;
+        public virtual DbSet<Producto> Productos { get; set; } = null!;
         public virtual DbSet<Repartidor> Repartidors { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -32,6 +34,22 @@ namespace TestGitHub.Models
         {
             modelBuilder.UseCollation("utf8mb4_general_ci")
                 .HasCharSet("utf8mb4");
+
+            modelBuilder.Entity<Categorium>(entity =>
+            {
+                entity.HasKey(e => e.CodigoCategoria)
+                    .HasName("PRIMARY");
+
+                entity.ToTable("categoria");
+
+                entity.Property(e => e.CodigoCategoria)
+                    .HasColumnType("int(10) unsigned zerofill")
+                    .HasColumnName("codigo_Categoria");
+
+                entity.Property(e => e.NombreCategoria)
+                    .HasMaxLength(25)
+                    .HasColumnName("nombre_Categoria");
+            });
 
             modelBuilder.Entity<Cliente>(entity =>
             {
@@ -72,6 +90,38 @@ namespace TestGitHub.Models
                 entity.Property(e => e.TelefonoCliente)
                     .HasColumnType("int(9)")
                     .HasColumnName("telefono_Cliente");
+            });
+
+            modelBuilder.Entity<Producto>(entity =>
+            {
+                entity.HasKey(e => e.CodigoProducto)
+                    .HasName("PRIMARY");
+
+                entity.ToTable("producto");
+
+                entity.HasIndex(e => e.CodigoCategoria, "FK__PRODUCTO__Id_cat__5CD6CB2B");
+
+                entity.Property(e => e.CodigoProducto)
+                    .HasColumnType("int(10) unsigned zerofill")
+                    .HasColumnName("codigo_Producto");
+
+                entity.Property(e => e.CodigoCategoria)
+                    .HasColumnType("int(10)")
+                    .HasColumnName("codigo_Categoria");
+
+                entity.Property(e => e.DescripcionProducto)
+                    .HasMaxLength(20)
+                    .HasColumnName("descripcion_Producto");
+
+                entity.Property(e => e.NombreProducto)
+                    .HasMaxLength(20)
+                    .HasColumnName("nombre_Producto");
+
+                entity.Property(e => e.PrecioProducto).HasColumnName("precio_Producto");
+
+                entity.Property(e => e.StockProducto)
+                    .HasColumnType("int(10)")
+                    .HasColumnName("stock_Producto");
             });
 
             modelBuilder.Entity<Repartidor>(entity =>
