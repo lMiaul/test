@@ -7,16 +7,13 @@ namespace TestGitHub.Controllers
         private readonly bdproductoContext Context;
         public ProductoController(bdproductoContext context)
         {
-            Context = context;  
+            Context = context;
         }
         public IActionResult Index()
         {
             return View();
         }
-        public IActionResult Registro()
-        {
-            return View();
-        }
+        
         public IActionResult Menu()
         {
             var ObjSesion = HttpContext.Session.GetString("scliente");
@@ -26,7 +23,7 @@ namespace TestGitHub.Controllers
             }
             else
             {
-                return RedirectToAction("Index","Cliente");
+                return RedirectToAction("Index", "Cliente");
             }
         }
 
@@ -62,9 +59,38 @@ namespace TestGitHub.Controllers
         {
             return View();
         }
-        
-   
 
+        [Route("Cliente/BuscarProducto")]
+        public IActionResult Buscar()
+        {
+            var list = Context.Productos;
+            return View(list);
+        }
+        public IActionResult ListarProductos()
+        {
+            var list = Context.Productos;
+            return View(list);
+        }
+        public IActionResult Registro()
+        {
+            ViewBag.Categoria = Context.Categorias;
+            return View();
+        }
+        public IActionResult AddProducto(Producto Obj)
+        {
+            if (ModelState.IsValid)
+            {
+                Context.Productos.Add(Obj);
+                Context.SaveChanges();
+                return View("ListarProductos");
+            }
+            else
+            {
+                ViewBag.Categoria = Context.Categorias;
+                return RedirectToAction("Registro", "Producto");
+            }
+            
+        }
 
         
     }
