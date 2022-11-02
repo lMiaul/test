@@ -60,12 +60,12 @@ namespace TestGitHub.Controllers
             return View();
         }
 
-        [Route("Cliente/BuscarProducto")]
+        /*[Route("Cliente/BuscarProducto")]
         public IActionResult Buscar()
         {
             var list = Context.Productos;
             return View(list);
-        }
+        }*/
         public IActionResult ListarProductos()
         {
             var list = Context.Productos;
