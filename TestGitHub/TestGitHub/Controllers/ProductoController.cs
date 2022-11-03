@@ -60,12 +60,12 @@ namespace TestGitHub.Controllers
             return View();
         }
 
-        /*[Route("Cliente/BuscarProducto")]
+        [Route("Cliente/BuscarProducto")]
         public IActionResult Buscar()
         {
             var list = Context.Productos;
             return View(list);
-        }*/
+        }
         
         public IActionResult Registro()
         {
@@ -78,7 +78,7 @@ namespace TestGitHub.Controllers
             {
                 Context.Productos.Add(Obj);
                 Context.SaveChanges();
-                return View("ListarProductos");
+                return View("Buscar");
             }
             else
             {
@@ -88,6 +88,51 @@ namespace TestGitHub.Controllers
             
         }
 
-        
+        [Route("Producto/Delete/{Codigo}")]
+        public IActionResult Delete(int Codigo)
+        {
+            var Obj = (from Tapo in Context.Productos
+                       where Tapo.CodigoProducto == Codigo
+                       select Tapo).Single();
+            Context.Productos.Remove(Obj);
+            Context.SaveChanges();
+
+            return RedirectToAction("Buscar");
+        }
+
+        [Route("Producto/Edit/{Codigo}")]
+        public IActionResult Edit(int Codigo)
+        {
+            ViewBag.Categoria = Context.Categorias;
+
+            var Obj = (from Tapo in Context.Productos
+                       where Tapo.CodigoProducto == Codigo
+                       select Tapo).Single();
+            return View(Obj);
+        }
+        public IActionResult EditarProducto(Producto ObjNew)
+        {
+            if (ModelState.IsValid)
+            {
+                var ObjOld = (from Tapo in Context.Productos
+                              where Tapo.CodigoProducto == ObjNew.CodigoProducto
+                              select Tapo).Single();
+
+                ObjOld.CodigoProducto = ObjNew.CodigoProducto;
+                ObjOld.NombreProducto = ObjNew.NombreProducto;
+                ObjOld.DescripcionProducto = ObjNew.DescripcionProducto;
+                ObjOld.CodigoCategoria = ObjNew.CodigoCategoria;
+                ObjOld.StockProducto = ObjNew.StockProducto;
+                ObjOld.PrecioProducto = ObjNew.PrecioProducto;
+
+                Context.SaveChanges();
+                return RedirectToAction("Buscar");
+            }
+            else
+            {
+                ViewBag.Categoria = Context.Categorias;
+                return View("Edit");
+            }
+        }
     }
 }

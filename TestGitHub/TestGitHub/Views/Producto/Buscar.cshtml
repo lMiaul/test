@@ -16,6 +16,8 @@
                 <td scope="col">Nombre</td>
                 <td scope="col">Descripcion</td>
                 <td scope="col">Precio</td>
+                <td scope="col">Eliminar</td>
+                <td scope="col">Editar</td>
             </tr>
             <tbody id="myTable">
                 @foreach (var item in Model)
@@ -25,6 +27,8 @@
                         <td scope="col">@item.NombreProducto</td>
                         <td scope="col">@item.DescripcionProducto</td>
                         <td scope="col">@item.PrecioProducto</td>
+                        <td scope="col"><a asp-action="Delete" asp-route-id="@item.CodigoProducto">Eliminar</a></td>
+                        <td scope="col"><a asp-action="Edit" asp-route-id="@item.CodigoProducto">Editar</a></td>
                     </tr>
                 }
             </tbody>
