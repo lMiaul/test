@@ -66,11 +66,7 @@ namespace TestGitHub.Controllers
             var list = Context.Productos;
             return View(list);
         }*/
-        public IActionResult ListarProductos()
-        {
-            var list = Context.Productos;
-            return View(list);
-        }
+        
         public IActionResult Registro()
         {
             ViewBag.Categoria = Context.Categorias;
