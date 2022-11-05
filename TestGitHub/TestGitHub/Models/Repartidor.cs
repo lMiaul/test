@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+#nullable disable
 namespace TestGitHub.Models
 {
     public partial class Repartidor
