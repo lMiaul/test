@@ -13,9 +13,30 @@ namespace TestGitHub.Controllers
         {
             return View();
         }
-        
+        public static List<Producto> lstProductoTemporal = new List<Producto>();
+
+        [Route("Producto/{Codigo}")]
+        public IActionResult AñadirCarrito(int codigo)
+        {
+            var Obj = (from TProducto in Context.Productos
+                       where TProducto.CodigoProducto == codigo
+                       && TProducto.StockProducto != 0
+                       select TProducto).Single();
+            if(Obj == null)
+            {
+                return View("Menu");
+            }
+            else
+            {
+                
+                lstProductoTemporal.Add(Obj);
+                ViewBag.lista = lstProductoTemporal;
+                return View("Buscar");
+            }
+        }
         public IActionResult Menu()
         {
+            ViewBag.lista = lstProductoTemporal;
             var ObjSesion = HttpContext.Session.GetString("scliente");
             if (ObjSesion != null)
             {
