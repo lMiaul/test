@@ -16,7 +16,7 @@ namespace TestGitHub.Models
         {
         }
 
-        public virtual DbSet<Categoria> Categorias { get; set; } = null!;
+        public virtual DbSet<Categorium> Categoria { get; set; } = null!;
         public virtual DbSet<Cliente> Clientes { get; set; } = null!;
         public virtual DbSet<DetallePedido> DetallePedidos { get; set; } = null!;
         public virtual DbSet<Pedido> Pedidos { get; set; } = null!;
@@ -37,7 +37,7 @@ namespace TestGitHub.Models
             modelBuilder.UseCollation("utf8mb4_general_ci")
                 .HasCharSet("utf8mb4");
 
-            modelBuilder.Entity<Categoria>(entity =>
+            modelBuilder.Entity<Categorium>(entity =>
             {
                 entity.HasKey(e => e.CodigoCategoria)
                     .HasName("PRIMARY");
@@ -179,6 +179,10 @@ namespace TestGitHub.Models
                 entity.Property(e => e.StockProducto)
                     .HasColumnType("int(10)")
                     .HasColumnName("stock_Producto");
+
+                entity.Property(e => e.UrlImagen)
+                    .HasMaxLength(500)
+                    .HasColumnName("url_Imagen");
             });
 
             modelBuilder.Entity<Repartidor>(entity =>

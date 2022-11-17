@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-
 namespace TestGitHub.Models
 {
     public partial class Producto
@@ -19,5 +18,6 @@ namespace TestGitHub.Models
         [Required(ErrorMessage = "Precio del Producto es obligatorio")]
         [Range(1, float.MaxValue, ErrorMessage = "El precio debe ser Mayor a cero.")]
         public float PrecioProducto { get; set; }
+        public string? UrlImagen { get; set; }
     }
 }
