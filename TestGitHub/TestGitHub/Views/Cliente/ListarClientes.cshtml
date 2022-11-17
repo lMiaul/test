@@ -7,7 +7,7 @@
 
 <html>
     <body>
-        <h1><a asp-controller="Cliente" asp-action="Registro">Añadir Cliente</a></h1>
+        <h1><a asp-controller="Cliente" asp-action="Registro" class="btn btn-primary">Añadir Cliente</a></h1>
         <h2>
             Buscar<input type="text" class="form-control" id="myInput" placeholder="Search..." />
         </h2>
@@ -36,6 +36,7 @@
         </table>
     </body>
 </html>
+
 <script>
     $(document).ready(function () {
         $("#myInput").on("keyup", function () {

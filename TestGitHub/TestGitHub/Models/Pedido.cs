@@ -5,6 +5,7 @@ namespace TestGitHub.Models
 {
     public partial class Pedido
     {
+
         public uint CodigoPedido { get; set; }
         public int IdCliente { get; set; }
         public int IdRepartidor { get; set; }

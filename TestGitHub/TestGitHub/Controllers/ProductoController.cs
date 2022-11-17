@@ -13,7 +13,7 @@ namespace TestGitHub.Controllers
         {
             return View();
         }
-        public static List<Producto> lstProductoTemporal = new List<Producto>();
+        /*public static List<Producto> lstProductoTemporal = new List<Producto>();
 
         [Route("Producto/{Codigo}")]
         public IActionResult AñadirCarrito(int codigo)
@@ -33,10 +33,10 @@ namespace TestGitHub.Controllers
                 ViewBag.lista = lstProductoTemporal;
                 return View("Buscar");
             }
-        }
+        }*/
         public IActionResult Menu()
         {
-            ViewBag.lista = lstProductoTemporal;
+            
             var ObjSesion = HttpContext.Session.GetString("scliente");
             if (ObjSesion != null)
             {

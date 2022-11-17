@@ -63,7 +63,11 @@
                     </div>
 
                 </form>
-            <p><a href="#" class="fw-semibold fst-italic" style="color:black">¿Ya tiene una cuenta?</a></p>
+            <p><a asp-action="Index" class="fw-semibold fst-italic" style="color:black">¿Ya tiene una cuenta?</a></p>
         </section>
     </body>
 </html>
+
+@section Scripts{
+    @{ <partial name= "_ValidationSCriptsPartial"/>}
+}
