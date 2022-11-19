@@ -7,41 +7,18 @@
 
 <html>
     <body>
-        <h2>
-            Buscar<input type="text" class="form-control" id="myInput" placeholder="Buscar producto..." />
-        </h2>
-        <table class="table table-bordered">
-            <tr>
-                <td scope="col">ID</td>
-                <td scope="col">Nombre</td>
-                <td scope="col">Descripcion</td>
-                <td scope="col">Precio</td>
-                <td scope="col">Eliminar</td>
-                <td scope="col">Editar</td>
-            </tr>
-            <tbody id="myTable">
                 @foreach (var item in Model)
                 {
-                    <tr>
-                        <td scope="col">@item.CodigoProducto</td>
-                        <td scope="col">@item.NombreProducto</td>
-                        <td scope="col">@item.DescripcionProducto</td>
-                        <td scope="col">@item.PrecioProducto</td>
-                        <td scope="col"><a asp-action="Delete" asp-route-id="@item.CodigoProducto">Eliminar</a></td>
-                        <td scope="col"><a asp-action="Edit" asp-route-id="@item.CodigoProducto">Editar</a></td>
-                    </tr>
+                    @if(item.CodigoCategoria == 3){
+                        <div class="card" style="width: 18rem;">
+                            <img src="@item.UrlImagen" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">@item.NombreProducto</h5>
+                                <p class="card-text">@item.DescripcionProducto</p>
+                                <a asp-action="ElegirCantidad" asp-route-id="@item.CodigoProducto" class="btn btn-primary row d-flex justify-content-center align-content-center">Ver detalle</a>
+                            </div>
+                        </div>
+                    }
                 }
-            </tbody>
-        </table>
     </body>
 </html>
-<script>
-    $(document).ready(function () {
-        $("#myInput").on("keyup", function () {
-            var value = $(this).val().toLowerCase();
-            $("#myTable tr").filter(function () {
-                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-            });
-        });
-    });
-</script>

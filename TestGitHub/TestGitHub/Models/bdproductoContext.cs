@@ -16,7 +16,7 @@ namespace TestGitHub.Models
         {
         }
 
-        public virtual DbSet<Categorium> Categoria { get; set; } = null!;
+        public virtual DbSet<Categoria> Categorias { get; set; } = null!;
         public virtual DbSet<Cliente> Clientes { get; set; } = null!;
         public virtual DbSet<DetallePedido> DetallePedidos { get; set; } = null!;
         public virtual DbSet<Pedido> Pedidos { get; set; } = null!;
@@ -37,7 +37,7 @@ namespace TestGitHub.Models
             modelBuilder.UseCollation("utf8mb4_general_ci")
                 .HasCharSet("utf8mb4");
 
-            modelBuilder.Entity<Categorium>(entity =>
+            modelBuilder.Entity<Categoria>(entity =>
             {
                 entity.HasKey(e => e.CodigoCategoria)
                     .HasName("PRIMARY");

@@ -1,9 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
-
-class Cliente :
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+
 #nullable disable
 namespace TestGitHub.Models
 {

@@ -81,7 +81,7 @@ namespace TestGitHub.Controllers
             return View();
         }
 
-        [Route("Cliente/BuscarProducto")]
+        [Route("Producto/BuscarProducto")]
         public IActionResult Buscar()
         {
             var list = Context.Productos;
@@ -154,6 +154,15 @@ namespace TestGitHub.Controllers
                 ViewBag.Categoria = Context.Categorias;
                 return View("Edit");
             }
+        }
+        [Route("Producto/ElegirCantidad/{Codigo}")]
+        public IActionResult ElegirCantidad(int codigo){
+            ViewBag.Categoria = Context.Categorias;
+            var Obj = (from TProducto in Context.Productos
+                       where TProducto.CodigoProducto == codigo
+                       select TProducto).Single();
+
+            return View(Obj);
         }
     }
 }

@@ -1,0 +1,65 @@
+﻿@model TestGitHub.Models.Producto
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Elección de cantidad</title>
+        <link rel="stylesheet" href="../css/estilosRegistro.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        <section class="form-register text-center">
+            <h4 style="font-family: 'Inter Tight'; font-weight:900">Formulario Registro</h4>
+            <form asp-controller="Producto" asp-action="EditarProducto" method="post">
+                <div class="form-group">
+                    <label for="formGroupExampleInput" hidden="hidden">Codigo</label>
+                    <input asp-for="CodigoProducto" hidden="hidden" class="form-control" id="formGroupExampleInput" placeholder="Ingrese sus nombres">
+                    <span asp-validation-for="CodigoProducto" class="text-danger" hidden="hidden"></span>
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Nombre</label>
+                    <input asp-for="NombreProducto" class="form-control" id="formGroupExampleInput" placeholder="Ingrese sus nombres">
+                    <span asp-validation-for="NombreProducto" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Descripcion</label>
+                    <input asp-for="DescripcionProducto" class="form-control" id="formGroupExampleInput" placeholder="Ingrese sus apellidos">
+                    <span asp-validation-for="DescripcionProducto" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Categoría</label>
+                    <!--<input asp-for="CodigoCategoria" class="form-control" id="formGroupExampleInput" placeholder="Ingrese su edad">-->
+                    <select asp-for="CodigoCategoria" class="form-control" id="formGroupExampleInput" asp-items="@(new SelectList(ViewBag.Categoria, "CodigoCategoria", "NombreCategoria"))"></select>
+                    <span asp-validation-for="CodigoCategoria" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput" hidden="hidden">Stock</label>
+                    <input asp-for="StockProducto" hidden="hidden" class="form-control" id="formGroupExampleInput" placeholder="Ingrese su teléfono">
+                    <span asp-validation-for="StockProducto" hidden="hidden" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Precio</label>
+                    <input asp-for="PrecioProducto" class="form-control" id="formGroupExampleInput" placeholder="Ingrese su dirección">
+                    <span asp-validation-for="PrecioProducto" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary" value="btn" name="grabar" data-toggle="modal" data-target="#exampleModal">Grabar</button>
+                </div>
+
+            </form>
+        </section>
+    </body>
+</html>
