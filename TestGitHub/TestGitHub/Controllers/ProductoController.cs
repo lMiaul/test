@@ -1,13 +1,22 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
+
+using TestGitHub.Helpers;
+using TestGitHub.Providers;
+using System.IO;
+using Microsoft.AspNetCore.Hosting;
+
 namespace TestGitHub.Controllers
+
 {
     public class ProductoController : Controller
     {
         private readonly bdproductoContext Context;
-        public ProductoController(bdproductoContext context)
+        private readonly IWebHostEnvironment webHostEnvironment;
+        public ProductoController(bdproductoContext context, IWebHostEnvironment webHost)
         {
             Context = context;
+            webHostEnvironment = webHost;
         }
         public IActionResult Index()
         {
@@ -93,13 +102,16 @@ namespace TestGitHub.Controllers
             ViewBag.Categoria = Context.Categorias;
             return View();
         }
-        public IActionResult AddProducto(Producto Obj)
+        [HttpPost]
+        public IActionResult AddProducto(Producto Obj, IFormFile image)
         {
             if (ModelState.IsValid)
             {
+                string UFileName = UploadedFile(image);
+                Obj.UrlImagen = UFileName;
                 Context.Productos.Add(Obj);
                 Context.SaveChanges();
-                return View("Buscar");
+                return RedirectToAction("Buscar");
             }
             else
             {
@@ -163,6 +175,22 @@ namespace TestGitHub.Controllers
                        select TProducto).Single();
 
             return View(Obj);
+        }
+        
+        public string UploadedFile(IFormFile image)
+        {
+            string uFileName = null;
+            if(image != null)
+            {
+                string uploadsFolder = Path.Combine(webHostEnvironment.WebRootPath, "images");
+                uFileName = Guid.NewGuid().ToString() + "_" + image.FileName;
+                string filePath = Path.Combine(uploadsFolder, uFileName);
+                using (var myFileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    image.CopyTo(myFileStream);
+                }
+            }
+            return uFileName;
         }
     }
 }

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace TestGitHub.Models
 {
     public partial class Producto
@@ -19,5 +21,8 @@ namespace TestGitHub.Models
         [Range(1, float.MaxValue, ErrorMessage = "El precio debe ser Mayor a cero.")]
         public float PrecioProducto { get; set; }
         public string? UrlImagen { get; set; }
+
+        [NotMapped]
+        public IFormFile ImagenFile { get; set; }
     }
 }
