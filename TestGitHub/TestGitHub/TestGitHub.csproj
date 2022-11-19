@@ -8,6 +8,11 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\assets\" />
+    <Folder Include="wwwroot\imagenes\abarrotes\" />
+    <Folder Include="wwwroot\imagenes\bebidas\" />
+    <Folder Include="wwwroot\imagenes\higiene\" />
+    <Folder Include="wwwroot\imagenes\medicamentos\" />
+    <Folder Include="wwwroot\imagenes\mascotas\" />
     <Folder Include="wwwroot\imagenes\producto\" />
     <Folder Include="wwwroot\img\" />
     <Folder Include="wwwroot\images\" />

@@ -5,6 +5,7 @@ using TestGitHub.Helpers;
 using TestGitHub.Providers;
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
+using TestGitHub.Extensions;
 
 namespace TestGitHub.Controllers
 
@@ -59,6 +60,8 @@ namespace TestGitHub.Controllers
 
         public IActionResult Abarrotes()
         {
+           /* var list = (from TAbarrotes in Context.Productos
+                        where T)*/
             return View();
         }
         public IActionResult Mascotas()
@@ -177,20 +180,42 @@ namespace TestGitHub.Controllers
             return View(Obj);
         }
         
+        /*NO ESTA LEYENDO*/
         public string UploadedFile(IFormFile image)
         {
             string uFileName = null;
             if(image != null)
             {
-                string uploadsFolder = Path.Combine(webHostEnvironment.WebRootPath, "images");
+               /* string uploadsFolder = Path.Combine(webHostEnvironment.WebRootPath, "images");
                 uFileName = Guid.NewGuid().ToString() + "_" + image.FileName;
                 string filePath = Path.Combine(uploadsFolder, uFileName);
                 using (var myFileStream = new FileStream(filePath, FileMode.Create))
                 {
                     image.CopyTo(myFileStream);
+                }*/
+
+            }
+            return uFileName = "hola";
+        }
+
+        public IActionResult GetProducto (int? codigoProducto)
+        {
+            if(codigoProducto != null)
+            {
+                List<int> carrito;
+                if(HttpContext.Session.GetObject<List<int>>("CARRITO") == null)
+                {
+                    carrito = new List<int>();
+                }
+                else
+                {
+                    carrito = HttpContext.Session.GetObject<List<int>>("CARRITO");
+                }
+                if(carrito.Contains(codigoProducto.Value) == false)
+                {
+                    carrito.Add(codigoProducto.Value);
                 }
             }
-            return uFileName;
         }
     }
 }
