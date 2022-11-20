@@ -227,10 +227,10 @@ namespace TestGitHub.Controllers
         /*Cambios
          uint por int
             cast de var productos a ser list<Producto>*/
-        public List<Producto> GetProductosCarritos(List<uint> idProductos)
+        public IEnumerable<Producto> GetProductosCarritos(List<uint> idProductos)
         {
-            var productos = this.Context.Productos.Where(z => idProductos.Contains((uint)z.CodigoProducto));
-            return (List<Producto>)productos;
+            IEnumerable<Producto> productos = this.Context.Productos.Where(z => idProductos.Contains((uint)z.CodigoProducto));
+            return productos;
         }
 
         public IActionResult Carrito (uint? codigoProducto)
@@ -249,7 +249,7 @@ namespace TestGitHub.Controllers
                 }
                 //List<Producto> productos = this.context.Productos.Where(z => idproductos.Contains(z.IdProducto));
 
-                List<Producto> productos = this.GetProductosCarritos(carrito);
+                IEnumerable<Producto> productos = this.GetProductosCarritos(carrito);
                 return View(productos);
             }
         }
@@ -257,7 +257,7 @@ namespace TestGitHub.Controllers
         public IActionResult Pedidos()
         {
             List<uint> carrito = HttpContext.Session.GetObject<List<uint>>("CARRITO");
-            List<Producto> productos = this.GetProductosCarritos(carrito);
+            IEnumerable<Producto> productos = this.GetProductosCarritos(carrito);
             /*Debo guardar el pedido antes*/
             HttpContext.Session.Remove("CARRITO");
             return View(productos);

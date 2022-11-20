@@ -7,18 +7,18 @@
 
 <html>
     <body>
-                @foreach (var item in Model)
-                {
-                    @if(item.CodigoCategoria == 3){
-                        <div class="card" style="width: 18rem;">
-                            <img src="@item.UrlImagen" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">@item.NombreProducto</h5>
-                                <p class="card-text">@item.DescripcionProducto</p>
-                                <a asp-action="ElegirCantidad" asp-route-id="@item.CodigoProducto" class="btn btn-primary row d-flex justify-content-center align-content-center">Ver detalle</a>
-                            </div>
+            @foreach (var item in Model)
+            {
+                @if(item.CodigoCategoria == 3){
+                    <div class="card" style="width: 18rem;">
+                        <img src="@item.UrlImagen" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">@item.NombreProducto</h5>
+                            <p class="card-text">@item.DescripcionProducto</p>
+                            <a asp-action="ElegirCantidad" asp-route-id="@item.CodigoProducto" class="btn btn-primary row d-flex justify-content-center align-content-center">Ver detalle</a>
                         </div>
-                    }
+                    </div>
                 }
+            }
     </body>
 </html>

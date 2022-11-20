@@ -1,0 +1,41 @@
+﻿@model IEnumerable<TestGitHub.Models.Producto>
+
+@{
+    ViewData["Title"] = "Pedidos";
+    float precio = 0;
+}
+
+<h1>Pedidos</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreProducto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrecioProducto)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreProducto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PrecioProducto) €
+                    @{
+                        precio += item.PrecioProducto;
+                    }
+                </td>
+            </tr>
+        }
+        <tr>
+            <td><b>Precio total:</b></td>
+            <td>@precio €</td>
+        </tr>
+    </tbody>
+</table>

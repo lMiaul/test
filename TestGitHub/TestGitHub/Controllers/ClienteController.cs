@@ -86,7 +86,7 @@ namespace TestGitHub.Controllers
 
         public IActionResult ValidarCliente(Cliente cliente)
         {
-            if (ModelState.IsValid)
+            if(ModelState.IsValid)
             {
                 var Obj = (from TCliente in Context.Clientes
                            where TCliente.EmailCliente == cliente.EmailCliente

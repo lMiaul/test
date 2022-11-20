@@ -10,41 +10,73 @@
 
 @if (Model != null && Model.Any())
 {
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.NombreProducto)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.PrecioProducto)
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.NombreProducto)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.PrecioProducto)
-                    </td>
-                    <td>
-                        <a class="btn btn-outline-danger" asp-action="Carrito" asp-controller="Producto" asp-route-codigoProducto="@item.CodigoProducto">
-                            Eliminar
-                        </a>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+<form method="post">
+    <br />
+    <div class="backgroundWhiteBorder">
+        <div class="container row">
+            <div class="col -8">
+                <div class="card mt-4">
+                    <div class="card-header bg-dark text-light ml-0 row container">
+                        <div class="col-6">
+                            <i class="fa fa-shopping-cart"></i> &nbsp;
+                            Carro de Compras
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class=" d-none d-lg-block">
+                            <div class="row" style="color:#821f3d">
+                                <div class="col-lg-2">
+                                </div>
+                                <div class="col-12 col-lg-7">
+                                    Detalle de producto
+                                </div>
+                                <div class="col-12 col-lg-2">
+                                    Precio
+                                </div>
+                                <div class="col-6 col-sm-4 col-lg-1">
+                                </div>
+                            </div>
+                        </div>
 
-    <a asp-action="Pedidos" asp-controller="Producto">
-        Realizar pedido
-    </a>
+                        <hr />
+                        @foreach(var item in Model)
+                        {
+                           <div class="row h-100">
+                                <div class="col-4 col-md-2 text-center py-2">
+                                    <img src="@item.UrlImagen" class="rounded" width="100%" />
+                                </div>
+                                <div class="col-8 col-lg-7">
+                                    <h5>@item.NombreProducto</h5>
+                                    <div style="font-size:11px;">@item.DescripcionProducto</div>
+                                </div>
+                                <div class="col-3 col-lg-2 pt-lg-4" style="font-size:11px;">
+                                    <span style="font-size:17px;"> S/.@item.PrecioProducto</span>
+
+                                </div>
+                                <div class="col-2 col-lg-1 p-0 pt-lg-4 text-center">
+                                    <a asp-controller="Producto" asp-action="Carrito" class="btn btn-outline-danger">
+                                        Borrar
+                                    </a>
+                                </div>
+                            </div>
+                        }
+                       
+                        <hr />
+                    </div>
+                    <div class="card-footer">
+                        <div class="row">
+                            <div class="col-6 col-md-3 offset-md-9">
+                                <button type="submit" class="btn btn-success form-control ">
+                                    <span>Continuar</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
 }
 else
 {
