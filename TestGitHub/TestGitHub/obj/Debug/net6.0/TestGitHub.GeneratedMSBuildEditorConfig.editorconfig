@@ -59,6 +59,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cQnVzY2FyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/mauri/OneDrive/Documentos/GitHub/test/TestGitHub/TestGitHub/Views/Producto/Carrito.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cQ2Fycml0by5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/mauri/OneDrive/Documentos/GitHub/test/TestGitHub/TestGitHub/Views/Producto/CarritoDeCompra.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cQ2Fycml0b0RlQ29tcHJhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -69,6 +73,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/mauri/OneDrive/Documentos/GitHub/test/TestGitHub/TestGitHub/Views/Producto/ElegirCantidad.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cRWxlZ2lyQ2FudGlkYWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mauri/OneDrive/Documentos/GitHub/test/TestGitHub/TestGitHub/Views/Producto/GetProductos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cR2V0UHJvZHVjdG9zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/mauri/OneDrive/Documentos/GitHub/test/TestGitHub/TestGitHub/Views/Producto/Higiene.cshtml]

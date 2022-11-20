@@ -22,41 +22,45 @@
     </head>
     <body>
         <section class="form-register text-center">
-            <h4 style="font-family: 'Inter Tight'; font-weight:900">Formulario Registro</h4>
-            <form asp-controller="Producto" asp-action="EditarProducto" method="post">
+            <h4 style="font-family: 'Inter Tight'; font-weight:900">Validación</h4>
+            <form asp-controller="Producto" asp-action="GetProductos" asp-route-codigoProducto="@Model.CodigoProducto" method="post">
                 <div class="form-group">
                     <label for="formGroupExampleInput" hidden="hidden">Codigo</label>
-                    <input asp-for="CodigoProducto" hidden="hidden" class="form-control" id="formGroupExampleInput" placeholder="Ingrese sus nombres">
+                    <input asp-for="CodigoProducto" hidden="hidden" class="form-control" id="formGroupExampleInput">
                     <span asp-validation-for="CodigoProducto" class="text-danger" hidden="hidden"></span>
                 </div>
                 <div class="form-group">
                     <label for="formGroupExampleInput">Nombre</label>
-                    <input asp-for="NombreProducto" class="form-control" id="formGroupExampleInput" placeholder="Ingrese sus nombres">
+                    <input disabled asp-for="NombreProducto" class="form-control" id="formGroupExampleInput">
                     <span asp-validation-for="NombreProducto" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <label for="formGroupExampleInput">Descripcion</label>
-                    <input asp-for="DescripcionProducto" class="form-control" id="formGroupExampleInput" placeholder="Ingrese sus apellidos">
+                    <input disabled asp-for="DescripcionProducto" class="form-control" id="formGroupExampleInput">
                     <span asp-validation-for="DescripcionProducto" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <label for="formGroupExampleInput">Categoría</label>
-                    <!--<input asp-for="CodigoCategoria" class="form-control" id="formGroupExampleInput" placeholder="Ingrese su edad">-->
-                    <select asp-for="CodigoCategoria" class="form-control" id="formGroupExampleInput" asp-items="@(new SelectList(ViewBag.Categoria, "CodigoCategoria", "NombreCategoria"))"></select>
+                    <select disabled asp-for="CodigoCategoria" class="form-control" id="formGroupExampleInput" asp-items="@(new SelectList(ViewBag.Categoria, "CodigoCategoria", "NombreCategoria"))"></select>
                     <span asp-validation-for="CodigoCategoria" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <label for="formGroupExampleInput" hidden="hidden">Stock</label>
-                    <input asp-for="StockProducto" hidden="hidden" class="form-control" id="formGroupExampleInput" placeholder="Ingrese su teléfono">
+                    <input asp-for="StockProducto" hidden="hidden" class="form-control" id="formGroupExampleInput">
                     <span asp-validation-for="StockProducto" hidden="hidden" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <label for="formGroupExampleInput">Precio</label>
-                    <input asp-for="PrecioProducto" class="form-control" id="formGroupExampleInput" placeholder="Ingrese su dirección">
+                    <input disabled asp-for="PrecioProducto" class="form-control" id="formGroupExampleInput">
                     <span asp-validation-for="PrecioProducto" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary" value="btn" name="grabar" data-toggle="modal" data-target="#exampleModal">Grabar</button>
+                    <label for="formGroupExampleInput">Cantidad a escoger</label>
+                    <input type="number" asp-for="CantidadEscogida" class="form-control" id="formGroupExampleInput" placeholder="Ingrese la cantidad a escoger" min="1" max="@Model.StockProducto">
+                    <span asp-validation-for="CantidadEscogida" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary" value="btn" name="grabar" data-toggle="modal" data-target="#exampleModal">Confirmar</button>
                 </div>
 
             </form>

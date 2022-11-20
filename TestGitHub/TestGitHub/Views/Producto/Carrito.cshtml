@@ -1,0 +1,52 @@
+﻿@model IEnumerable<TestGitHub.Models.Producto>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Carrito";
+}
+
+<h1>Carrito</h1>
+
+@if (Model != null && Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.NombreProducto)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PrecioProducto)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NombreProducto)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PrecioProducto)
+                    </td>
+                    <td>
+                        <a class="btn btn-outline-danger" asp-action="Carrito" asp-controller="Producto" asp-route-codigoProducto="@item.CodigoProducto">
+                            Eliminar
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a asp-action="Pedidos" asp-controller="Producto">
+        Realizar pedido
+    </a>
+}
+else
+{
+    <p style="color:red">Carrito vacio</p>
+}

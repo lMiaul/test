@@ -24,5 +24,8 @@ namespace TestGitHub.Models
 
         [NotMapped]
         public IFormFile ImagenFile { get; set; }
+
+        [NotMapped]
+        public int CantidadEscogida { get; set; }
     }
 }

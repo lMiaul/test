@@ -7,6 +7,7 @@ using System.IO;
 using Microsoft.AspNetCore.Hosting;
 using TestGitHub.Extensions;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace TestGitHub.Controllers
 
@@ -199,18 +200,18 @@ namespace TestGitHub.Controllers
             return uFileName = "hola";
         }
 
-        public IActionResult GetProductos (int? codigoProducto)
+        public IActionResult GetProductos (uint? codigoProducto)
         {
             if(codigoProducto != null)
             {
-                List<int> carrito;
-                if(HttpContext.Session.GetObject<List<int>>("CARRITO") == null)
+                List<uint> carrito;
+                if(HttpContext.Session.GetObject<List<uint>>("CARRITO") == null)
                 {
-                    carrito = new List<int>();
+                    carrito = new List<uint>();
                 }
                 else
                 {
-                    carrito = HttpContext.Session.GetObject<List<int>>("CARRITO");
+                    carrito = HttpContext.Session.GetObject<List<uint>>("CARRITO");
                 }
                 if (carrito.Contains(codigoProducto.Value) == false)
                 {
@@ -222,17 +223,19 @@ namespace TestGitHub.Controllers
             var productos = Context.Productos;
             return View(productos);
         }
+
         /*Cambios
          uint por int
             cast de var productos a ser list<Producto>*/
-        public List<Producto> GetProductosCarritos(List<int> idProductos)
+        public List<Producto> GetProductosCarritos(List<uint> idProductos)
         {
-            var productos = this.Context.Productos.Where(z => idProductos.Contains((int)z.CodigoProducto));
+            var productos = this.Context.Productos.Where(z => idProductos.Contains((uint)z.CodigoProducto));
             return (List<Producto>)productos;
         }
-        public IActionResult Carrito (int? codigoProducto)
+
+        public IActionResult Carrito (uint? codigoProducto)
         {
-            List<int> carrito = HttpContext.Session.GetObject<List<int>>("CARRITO");
+            List<uint> carrito = HttpContext.Session.GetObject<List<uint>>("CARRITO");
             if(carrito == null)
             {
                 return View();
@@ -250,9 +253,10 @@ namespace TestGitHub.Controllers
                 return View(productos);
             }
         }
+
         public IActionResult Pedidos()
         {
-            List<int> carrito = HttpContext.Session.GetObject<List<int>>("CARRITO");
+            List<uint> carrito = HttpContext.Session.GetObject<List<uint>>("CARRITO");
             List<Producto> productos = this.GetProductosCarritos(carrito);
             /*Debo guardar el pedido antes*/
             HttpContext.Session.Remove("CARRITO");
