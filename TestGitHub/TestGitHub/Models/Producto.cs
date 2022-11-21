@@ -2,29 +2,25 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-#nullable disable
+
 namespace TestGitHub.Models
 {
     public partial class Producto
     {
         public uint CodigoProducto { get; set; }
-        [Required(ErrorMessage = "Nombre del Producto es obligatorio")]
+        [Required(ErrorMessage = "El campo Nombre debe ser llenado.")]
         public string NombreProducto { get; set; } = null!;
-        [Required(ErrorMessage = "Descripcion del Producto es obligatorio")]
+        [Required(ErrorMessage = "El campo Descripción debe ser llenado.")]
         public string DescripcionProducto { get; set; } = null!;
-        [Required(ErrorMessage = "Tipo de la Categoria es obligatorio")]
+        [Required(ErrorMessage = "El campo Codigo debe ser llenado.")]
         public int CodigoCategoria { get; set; }
-        [Required(ErrorMessage = "Stock del Producto es obligatorio")]
-        [Range(1, int.MaxValue, ErrorMessage = "El stock debe ser Mayor a cero.")]
+        [Required(ErrorMessage = "El campo Stock debe ser llenado.")]
+        [Range(1,int.MaxValue, ErrorMessage = "El stock debe ser mayor a 0.")]
         public int StockProducto { get; set; }
-        [Required(ErrorMessage = "Precio del Producto es obligatorio")]
-        [Range(1, float.MaxValue, ErrorMessage = "El precio debe ser Mayor a cero.")]
+        [Required(ErrorMessage = "El campo Precio debe ser llenado.")]
         public float PrecioProducto { get; set; }
+        [Required(ErrorMessage = "El campo URL debe ser llenado.")]
         public string? UrlImagen { get; set; }
-
-        [NotMapped]
-        public IFormFile ImagenFile { get; set; }
-
         [NotMapped]
         public int CantidadEscogida { get; set; }
     }

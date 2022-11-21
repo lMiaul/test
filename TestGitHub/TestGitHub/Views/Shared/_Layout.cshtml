@@ -35,6 +35,18 @@
                         <li class="nav-item">
                             <a class="nav-link" asp-action="Carrito" asp-controller="Producto">Carrito</a>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Categorías
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Producto" asp-action="Abarrotes">Abarrotes</a></li>
+                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Producto" asp-action="Bebidas">Bebidas</a></li>
+                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Producto" asp-action="Mascotas">Mascotas</a></li>
+                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Producto" asp-action="Medicamentos">Medicamentos</a></li>
+                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Producto" asp-action="Higiene">Higiene</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>

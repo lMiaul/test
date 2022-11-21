@@ -62,25 +62,28 @@ namespace TestGitHub.Controllers
 
         public IActionResult Abarrotes()
         {
-           /* var list = (from TAbarrotes in Context.Productos
-                        where T)*/
-            return View();
+            var list = Context.Productos;
+            return View(list);
         }
         public IActionResult Mascotas()
         {
-            return View();
+            var list = Context.Productos;
+            return View(list);
         }
         public IActionResult Bebidas()
         {
-            return View();
+            var list = Context.Productos;
+            return View(list);
         }
         public IActionResult Medicamentos()
         {
-            return View();
+            var list = Context.Productos;
+            return View(list);
         }
         public IActionResult Higiene()
         {
-            return View();
+            var list = Context.Productos;
+            return View(list);
         }
         public IActionResult CarritoDeCompra()
         {
