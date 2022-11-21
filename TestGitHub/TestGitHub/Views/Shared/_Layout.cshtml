@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@using TestGitHub.Utilidades
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -11,6 +16,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="~/css/login.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/fontawesome/css/all.css" />
 </head>
 <body>
     <header>
@@ -46,6 +52,19 @@
                                 <li><a class="nav-link text-dark" asp-area="" asp-controller="Producto" asp-action="Medicamentos">Medicamentos</a></li>
                                 <li><a class="nav-link text-dark" asp-area="" asp-controller="Producto" asp-action="Higiene">Higiene</a></li>
                             </ul>
+                        </li>
+                        <li>
+                            @if(HttpContextAccessor.HttpContext.Session.Get<List<CarroCompra>>(WC.SessionCarroCompras) != null)
+                                {
+                                    <a asp-action="Index" asp-controller="Carro" class="nav-link">
+                                    
+                            }
+                            else
+                            {
+                                <a href="#" class="nav-link">
+                                    <i class="fas fa-shopping-cart"></i> &nbsp; (0)
+                                </a>
+                            }
                         </li>
                     </ul>
                 </div>

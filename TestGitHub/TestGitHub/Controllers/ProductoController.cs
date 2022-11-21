@@ -265,5 +265,6 @@ namespace TestGitHub.Controllers
             HttpContext.Session.Remove("CARRITO");
             return View(productos);
         }
+        /*metodo de accion que reciba un objeto del detalle pedido y guarde la wea */
     }
 }

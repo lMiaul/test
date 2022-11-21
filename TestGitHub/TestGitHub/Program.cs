@@ -6,12 +6,16 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddHttpContextAccessor();
+
 builder.Services.AddSingleton<PathProvider>();
 builder.Services.AddSingleton<HelperUploadFiles>();
 
 builder.Services.AddSession(options =>
 {
     options.IdleTimeout = TimeSpan.FromSeconds(3600);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true; 
 });
 /*Cadena de conexion*/
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
