@@ -1,0 +1,56 @@
+﻿@model IEnumerable<TestGitHub.Models.Producto>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "GetListaProductos";
+    List<Producto> carrito = Context.Session.GetObject<List<Producto>>(WC.SessionCarroCompras);
+}
+
+<h1>GetListaProductos</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreProducto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CantidadEscogida)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrecioProducto)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreProducto)
+                </td>
+                <td>
+                    @item.CantidadEscogida
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PrecioProducto)
+                </td>
+                <td>
+                    @if (carrito != null && carrito.Contains(item))
+                    {
+                        <button disabled class="btn btn-outline-danger disabled">En carrito</button>
+                    }
+                    else
+                    {
+                        <a class="btn btn-outline-success" asp-action="GetProductos" asp-controller="Producto" asp-route-codigoProducto="@item.CodigoProducto">
+                            Añadir a carrito
+                        </a>
+                    }
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -23,7 +23,7 @@
     <body>
         <section class="form-register text-center">
             <h4 style="font-family: 'Inter Tight'; font-weight:900">Validación</h4>
-            <form asp-controller="Producto" asp-action="GetProductos" asp-route-codigoProducto="@Model.CodigoProducto" method="post">
+            <form asp-controller="Producto" asp-action="GetListaProductos" asp-route-codigoProducto="@Model.CodigoProducto" method="post">
                 <div class="form-group">
                     <label for="formGroupExampleInput" hidden="hidden">Codigo</label>
                     <input asp-for="CodigoProducto" hidden="hidden" class="form-control" id="formGroupExampleInput">

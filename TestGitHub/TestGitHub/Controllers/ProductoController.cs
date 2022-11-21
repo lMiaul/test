@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-
 using TestGitHub.Helpers;
 using TestGitHub.Providers;
 using System.IO;
@@ -8,6 +7,11 @@ using Microsoft.AspNetCore.Hosting;
 using TestGitHub.Extensions;
 using System.Linq;
 using System.Collections.Generic;
+using Newtonsoft.Json;
+
+using Microsoft.AspNetCore.Http;
+using TestGitHub.Utilidades;
+using System.Formats.Asn1;
 
 namespace TestGitHub.Controllers
 
@@ -226,13 +230,14 @@ namespace TestGitHub.Controllers
             var productos = Context.Productos;
             return View(productos);
         }
+        
 
         /*Cambios
          uint por int
             cast de var productos a ser list<Producto>*/
         public IEnumerable<Producto> GetProductosCarritos(List<uint> idProductos)
         {
-            IEnumerable<Producto> productos = this.Context.Productos.Where(z => idProductos.Contains((uint)z.CodigoProducto));
+            IEnumerable<Producto> productos = this.Context.Productos.Where(z => idProductos.Contains(z.CodigoProducto));
             return productos;
         }
 
@@ -245,10 +250,11 @@ namespace TestGitHub.Controllers
             }
             else
             {
+
                 if (codigoProducto != null)
                 {
                     carrito.Remove(codigoProducto.Value);
-                    HttpContext.Session.SetObject("Carrito", carrito);
+                    HttpContext.Session.SetObject("CARRITO", carrito);
                 }
                 //List<Producto> productos = this.context.Productos.Where(z => idproductos.Contains(z.IdProducto));
 
@@ -266,5 +272,34 @@ namespace TestGitHub.Controllers
             return View(productos);
         }
         /*metodo de accion que reciba un objeto del detalle pedido y guarde la wea */
+
+        public IActionResult GetListaProductos(Producto producto)
+        {
+            if (producto.CodigoProducto != null)
+            {
+                List<Producto> carrito;
+                if (HttpContext.Session.GetObject<List<Producto>>(WC.SessionCarroCompras) == null)
+                {
+                    carrito = new List<Producto>();
+                }
+                else
+                {
+                    carrito = HttpContext.Session.GetObject<List<Producto>>(WC.SessionCarroCompras);
+                }
+                if (carrito.Contains(producto) == false)
+                {
+                    carrito.Add(producto);
+                    HttpContext.Session.SetObject(WC.SessionCarroCompras, carrito);
+                }
+            }
+            /*ViewBag.Productos, it can be*/
+            var productos = Context.Productos;
+            return View(productos);
+        }
+
+
     }
+        
+    
+    
 }
