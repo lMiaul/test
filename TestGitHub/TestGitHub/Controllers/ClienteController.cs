@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-namespace TestGitHub.Controllers;
+
 using TestGitHub.Extensions;
+namespace TestGitHub.Controllers
+{
 
     public class ClienteController : Controller
     {

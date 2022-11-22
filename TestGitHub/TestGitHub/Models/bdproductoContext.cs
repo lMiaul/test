@@ -96,7 +96,7 @@ namespace TestGitHub.Models
 
             modelBuilder.Entity<DetallePedido>(entity =>
             {
-                entity.HasKey(e => e.IdDetalleVenta)
+                entity.HasKey(e => e.CodigoDetallePedido)
                     .HasName("PRIMARY");
 
                 entity.ToTable("detalle_pedido");
@@ -105,35 +105,23 @@ namespace TestGitHub.Models
 
                 entity.HasIndex(e => e.CodigoProducto, "FK__PRODUCTO__Cod_product__5CD6CB2B");
 
-                entity.Property(e => e.IdDetalleVenta)
-                    .HasColumnType("int(10)")
-                    .HasColumnName("id_Detalle_Venta");
+                entity.Property(e => e.CodigoDetallePedido)
+                    .HasColumnType("int(20) unsigned zerofill")
+                    .HasColumnName("codigo_DetallePedido");
 
                 entity.Property(e => e.Cantidad)
                     .HasColumnType("int(20)")
                     .HasColumnName("cantidad");
 
                 entity.Property(e => e.CodigoPedido)
-                    .HasColumnType("int(20) unsigned zerofill")
+                    .HasColumnType("int(20) unsigned")
                     .HasColumnName("codigo_Pedido");
 
                 entity.Property(e => e.CodigoProducto)
-                    .HasColumnType("int(20) unsigned zerofill")
+                    .HasColumnType("int(20) unsigned")
                     .HasColumnName("codigo_Producto");
 
                 entity.Property(e => e.PrecioVenta).HasColumnName("precio_Venta");
-
-                entity.HasOne(d => d.CodigoPedidoNavigation)
-                    .WithMany(p => p.DetallePedidos)
-                    .HasForeignKey(d => d.CodigoPedido)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("codigoPedido");
-
-                entity.HasOne(d => d.CodigoProductoNavigation)
-                    .WithMany(p => p.DetallePedidos)
-                    .HasForeignKey(d => d.CodigoProducto)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("codigoProducto");
             });
 
             modelBuilder.Entity<Pedido>(entity =>
@@ -156,11 +144,11 @@ namespace TestGitHub.Models
                     .HasColumnName("estado_Pedido");
 
                 entity.Property(e => e.IdCliente)
-                    .HasColumnType("int(20)")
+                    .HasColumnType("int(20) unsigned")
                     .HasColumnName("id_Cliente");
 
                 entity.Property(e => e.IdRepartidor)
-                    .HasColumnType("int(20)")
+                    .HasColumnType("int(20) unsigned")
                     .HasColumnName("id_Repartidor");
 
                 entity.Property(e => e.TotalPedido).HasColumnName("total_Pedido");

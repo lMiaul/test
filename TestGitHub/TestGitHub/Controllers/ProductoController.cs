@@ -108,7 +108,7 @@ namespace TestGitHub.Controllers
             var list = Context.Productos;
             return View(list);
         }
-        
+
         public IActionResult Registro()
         {
             ViewBag.Categoria = Context.Categorias;
@@ -130,7 +130,7 @@ namespace TestGitHub.Controllers
                 ViewBag.Categoria = Context.Categorias;
                 return RedirectToAction("Registro", "Producto");
             }
-            
+
         }
 
         [Route("Producto/Delete/{Codigo}")]
@@ -180,7 +180,8 @@ namespace TestGitHub.Controllers
             }
         }
         [Route("Producto/ElegirCantidad/{Codigo}")]
-        public IActionResult ElegirCantidad(int codigo){
+        public IActionResult ElegirCantidad(int codigo)
+        {
             ViewBag.Categoria = Context.Categorias;
             var Obj = (from TProducto in Context.Productos
                        where TProducto.CodigoProducto == codigo
@@ -188,31 +189,31 @@ namespace TestGitHub.Controllers
 
             return View(Obj);
         }
-        
+
         /*NO ESTA LEYENDO*/
         public string UploadedFile(IFormFile image)
         {
             string uFileName = null;
-            if(image != null)
+            if (image != null)
             {
-               /* string uploadsFolder = Path.Combine(webHostEnvironment.WebRootPath, "images");
-                uFileName = Guid.NewGuid().ToString() + "_" + image.FileName;
-                string filePath = Path.Combine(uploadsFolder, uFileName);
-                using (var myFileStream = new FileStream(filePath, FileMode.Create))
-                {
-                    image.CopyTo(myFileStream);
-                }*/
+                /* string uploadsFolder = Path.Combine(webHostEnvironment.WebRootPath, "images");
+                 uFileName = Guid.NewGuid().ToString() + "_" + image.FileName;
+                 string filePath = Path.Combine(uploadsFolder, uFileName);
+                 using (var myFileStream = new FileStream(filePath, FileMode.Create))
+                 {
+                     image.CopyTo(myFileStream);
+                 }*/
 
             }
             return uFileName = "hola";
         }
 
-        public IActionResult GetProductos (uint? codigoProducto)
+        public IActionResult GetProductos(uint? codigoProducto)
         {
-            if(codigoProducto != null)
+            if (codigoProducto != null)
             {
                 List<uint> carrito;
-                if(HttpContext.Session.GetObject<List<uint>>("CARRITO") == null)
+                if (HttpContext.Session.GetObject<List<uint>>("CARRITO") == null)
                 {
                     carrito = new List<uint>();
                 }
@@ -230,7 +231,7 @@ namespace TestGitHub.Controllers
             var productos = Context.Productos;
             return View(productos);
         }
-        
+
 
         /*Cambios
          uint por int
@@ -241,10 +242,10 @@ namespace TestGitHub.Controllers
             return productos;
         }
 
-        public IActionResult Carrito (uint? codigoProducto)
+        public IActionResult Carrito(uint? codigoProducto)
         {
             List<uint> carrito = HttpContext.Session.GetObject<List<uint>>("CARRITO");
-            if(carrito == null)
+            if (carrito == null)
             {
                 return View();
             }
@@ -313,9 +314,9 @@ namespace TestGitHub.Controllers
             else
             {
 
-                foreach(var item in carrito)
+                foreach (var item in carrito)
                 {
-                    if(item.CodigoProducto == codProducto)
+                    if (item.CodigoProducto == codProducto)
                     {
                         carrito.Remove(item);
                         HttpContext.Session.SetObject(WC.SessionCarroCompras, carrito);
@@ -336,9 +337,24 @@ namespace TestGitHub.Controllers
                 return View("GetListaProductos", productos);
             }
         }
+        public void cambiarPrecioTotal(Pedido pedido, float precioTotal)
+        {
+            var PedidoOld = (from TPedido in Context.Pedidos
+                       where TPedido.CodigoPedido == pedido.CodigoPedido
+                       select TPedido).SingleOrDefault();
+
+            PedidoOld.CodigoPedido = pedido.CodigoPedido;
+            PedidoOld.IdRepartidor = pedido.IdRepartidor;
+            PedidoOld.IdCliente = pedido.IdCliente;
+            PedidoOld.TotalPedido = precioTotal;
+            PedidoOld.EstadoPedido = pedido.EstadoPedido;
+
+            Context.SaveChanges();
+        }
 
         public IActionResult HacerPedido()
         {
+            float precioTotal = 0;
             List<Producto> carrito = HttpContext.Session.GetObject<List<Producto>>(WC.SessionCarroCompras);
             if (carrito == null)
             {
@@ -346,11 +362,40 @@ namespace TestGitHub.Controllers
             }
             else
             {
-                Cliente clienteSession = HttpContext.Session.GetString("scliente"); 
+                Cliente clienteSession = HttpContext.Session.Get<Cliente>("scliente");
+                Pedido pedido = new Pedido()
+                {
+                    IdCliente = clienteSession.IdCliente,
+                    IdRepartidor = 1,
+                    TotalPedido = 0,
+                    EstadoPedido = "Pedido"
+                };
+                Context.Pedidos.Add(pedido);
+                Context.SaveChanges();
+                
+                foreach (var prod in carrito)
+                {
+                    precioTotal += (float)(prod.CantidadEscogida * prod.PrecioProducto);
+                    DetallePedido detallePedido = new DetallePedido()
+                    {
+                        CodigoPedido = pedido.CodigoPedido,
+                        CodigoProducto = prod.CodigoProducto,
+                        Cantidad = prod.CantidadEscogida,
+                        PrecioVenta = prod.PrecioProducto  
+                    };
+                    Context.DetallePedidos.Add(detallePedido);
+                }
+                Context.SaveChanges();
+
+                this.cambiarPrecioTotal(pedido, precioTotal);
+
+                HttpContext.Session.Remove(WC.SessionCarroCompras);
+
+                return View("Menu");
             }
         }
     }
-        
+}      
     
     
-}
+

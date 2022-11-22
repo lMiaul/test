@@ -6,11 +6,6 @@ namespace TestGitHub.Models
 {
     public partial class Producto
     {
-        public Producto()
-        {
-            DetallePedidos = new HashSet<DetallePedido>();
-        }
-
         public uint CodigoProducto { get; set; }
         public string NombreProducto { get; set; } = null!;
         public string DescripcionProducto { get; set; } = null!;
@@ -20,6 +15,5 @@ namespace TestGitHub.Models
         public string? UrlImagen { get; set; }
         [NotMapped]
         public int CantidadEscogida { get; set; }
-        public virtual ICollection<DetallePedido> DetallePedidos { get; set; }
     }
 }

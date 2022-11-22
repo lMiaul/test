@@ -21,7 +21,11 @@
             <th>
                 @Html.DisplayNameFor(model => model.PrecioProducto)
             </th>
-            <th></th>
+            <th>
+                <a class="btn btn-outline-success" asp-action="HacerPedido" asp-controller="Producto">
+                    Hacer pedido
+                </a>
+            </th>
         </tr>
     </thead>
     <tbody>
