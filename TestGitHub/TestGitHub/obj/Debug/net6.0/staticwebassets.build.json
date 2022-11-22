@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "yyAWhPDpfazgmCRdyPnHwbXXT8NzJ+tj2h9+07TYDWY=",
+  "Hash": "y5bqRaxhLnQKqTnqtUL6vcMv8OsVTqcMTiO32EsDI4o=",
   "Source": "TestGitHub",
   "BasePath": "_content/TestGitHub",
   "Mode": "Default",
@@ -219,6 +219,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\medicamentos.png"
+    },
+    {
+      "Identity": "C:\\Users\\mauri\\OneDrive\\Documentos\\GitHub\\test\\TestGitHub\\TestGitHub\\wwwroot\\css\\cartas.css",
+      "SourceId": "TestGitHub",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\mauri\\OneDrive\\Documentos\\GitHub\\test\\TestGitHub\\TestGitHub\\wwwroot\\",
+      "BasePath": "_content/TestGitHub",
+      "RelativePath": "css/cartas.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\cartas.css"
     },
     {
       "Identity": "C:\\Users\\mauri\\OneDrive\\Documentos\\GitHub\\test\\TestGitHub\\TestGitHub\\wwwroot\\css\\diseñoBoleta.css",

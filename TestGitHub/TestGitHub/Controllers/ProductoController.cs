@@ -52,8 +52,8 @@ namespace TestGitHub.Controllers
         }*/
         public IActionResult Menu()
         {
-            
-            var ObjSesion = HttpContext.Session.GetString("scliente");
+
+            var ObjSesion = HttpContext.Session.Get<Cliente>("scliente");
             if (ObjSesion != null)
             {
                 return View();
@@ -334,6 +334,19 @@ namespace TestGitHub.Controllers
 
                 IEnumerable<Producto> productos = this.GetProductosCarritos(carrito);
                 return View("GetListaProductos", productos);
+            }
+        }
+
+        public IActionResult HacerPedido()
+        {
+            List<Producto> carrito = HttpContext.Session.GetObject<List<Producto>>(WC.SessionCarroCompras);
+            if (carrito == null)
+            {
+                return View("Menu");
+            }
+            else
+            {
+                Cliente clienteSession = HttpContext.Session.GetString("scliente"); 
             }
         }
     }

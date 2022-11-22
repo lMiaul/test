@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-namespace TestGitHub.Controllers
-{
+namespace TestGitHub.Controllers;
+using TestGitHub.Extensions;
+
     public class ClienteController : Controller
     {
         private readonly bdproductoContext Context;
@@ -98,7 +99,7 @@ namespace TestGitHub.Controllers
                 }
                 else
                 {
-                    HttpContext.Session.SetString("scliente", JsonConvert.SerializeObject(cliente));
+                    HttpContext.Session.SetObject("scliente", Obj);
                     return RedirectToAction("Menu", "Producto");
                 }
             }

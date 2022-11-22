@@ -96,13 +96,18 @@ namespace TestGitHub.Models
 
             modelBuilder.Entity<DetallePedido>(entity =>
             {
-                entity.HasNoKey();
+                entity.HasKey(e => e.IdDetalleVenta)
+                    .HasName("PRIMARY");
 
                 entity.ToTable("detalle_pedido");
 
                 entity.HasIndex(e => e.CodigoPedido, "FK__PEDIDO__Cod_product__5CD6CB2B");
 
                 entity.HasIndex(e => e.CodigoProducto, "FK__PRODUCTO__Cod_product__5CD6CB2B");
+
+                entity.Property(e => e.IdDetalleVenta)
+                    .HasColumnType("int(10)")
+                    .HasColumnName("id_Detalle_Venta");
 
                 entity.Property(e => e.Cantidad)
                     .HasColumnType("int(20)")
@@ -117,6 +122,18 @@ namespace TestGitHub.Models
                     .HasColumnName("codigo_Producto");
 
                 entity.Property(e => e.PrecioVenta).HasColumnName("precio_Venta");
+
+                entity.HasOne(d => d.CodigoPedidoNavigation)
+                    .WithMany(p => p.DetallePedidos)
+                    .HasForeignKey(d => d.CodigoPedido)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("codigoPedido");
+
+                entity.HasOne(d => d.CodigoProductoNavigation)
+                    .WithMany(p => p.DetallePedidos)
+                    .HasForeignKey(d => d.CodigoProducto)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("codigoProducto");
             });
 
             modelBuilder.Entity<Pedido>(entity =>
