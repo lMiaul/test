@@ -293,11 +293,49 @@ namespace TestGitHub.Controllers
                 }
             }
             /*ViewBag.Productos, it can be*/
-            var productos = Context.Productos;
+            var productos = HttpContext.Session.GetObject<List<Producto>>(WC.SessionCarroCompras);
             return View(productos);
         }
 
+        public IEnumerable<Producto> GetProductosCarritos(List<Producto> Productos)
+        {
+            IEnumerable<Producto> productos = this.Context.Productos.Where(z => Productos.Contains(z));
+            return productos;
+        }
 
+        public IActionResult EliminarProducto(uint codProducto)
+        {
+            List<Producto> carrito = HttpContext.Session.GetObject<List<Producto>>(WC.SessionCarroCompras);
+            if (carrito == null)
+            {
+                return View();
+            }
+            else
+            {
+
+                foreach(var item in carrito)
+                {
+                    if(item.CodigoProducto == codProducto)
+                    {
+                        carrito.Remove(item);
+                        HttpContext.Session.SetObject(WC.SessionCarroCompras, carrito);
+                        break;
+                    }
+                }
+                /*if (codProducto != null)
+                {
+                    Producto prod = (from TProducto in Context.Productos
+                                     where TProducto.CodigoProducto == codProducto
+                                     select TProducto).FirstOrDefault();
+                    carrito.Remove(prod);
+                    HttpContext.Session.SetObject(WC.SessionCarroCompras, carrito);
+                }*/
+                //List<Producto> productos = this.context.Productos.Where(z => idproductos.Contains(z.IdProducto));
+
+                IEnumerable<Producto> productos = this.GetProductosCarritos(carrito);
+                return View("GetListaProductos", productos);
+            }
+        }
     }
         
     

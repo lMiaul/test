@@ -23,26 +23,28 @@
     <body>
         <section class="form-register text-center">
             <h4 style="font-family: 'Inter Tight'; font-weight:900">Validación</h4>
-            <form asp-controller="Producto" asp-action="GetListaProductos" asp-route-codigoProducto="@Model.CodigoProducto" method="post">
+            <form asp-controller="Producto" asp-action="GetListaProductos" method="post">
                 <div class="form-group">
                     <label for="formGroupExampleInput" hidden="hidden">Codigo</label>
                     <input asp-for="CodigoProducto" hidden="hidden" class="form-control" id="formGroupExampleInput">
                     <span asp-validation-for="CodigoProducto" class="text-danger" hidden="hidden"></span>
                 </div>
                 <div class="form-group">
-                    <label for="formGroupExampleInput">Nombre</label>
-                    <input disabled asp-for="NombreProducto" class="form-control" id="formGroupExampleInput">
-                    <span asp-validation-for="NombreProducto" class="text-danger"></span>
+                    <label for="formGroupExampleInput">Nombre</label><br />
+                    <label for="formGroupExampleInput">@Model.NombreProducto</label>
+                    <input asp-for="NombreProducto" hidden="hidden" class="form-control" id="formGroupExampleInput">
+                    <span asp-validation-for="NombreProducto" hidden="hidden" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label for="formGroupExampleInput">Descripcion</label>
-                    <input disabled asp-for="DescripcionProducto" class="form-control" id="formGroupExampleInput">
-                    <span asp-validation-for="DescripcionProducto" class="text-danger"></span>
+                    <label for="formGroupExampleInput">Descripcion</label><br />
+                    <label for="formGroupExampleInput">@Model.DescripcionProducto</label>
+                    <input asp-for="DescripcionProducto" hidden="hidden" class="form-control" id="formGroupExampleInput">
+                    <span asp-validation-for="DescripcionProducto" hidden="hidden" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label for="formGroupExampleInput">Categoría</label>
-                    <select disabled asp-for="CodigoCategoria" class="form-control" id="formGroupExampleInput" asp-items="@(new SelectList(ViewBag.Categoria, "CodigoCategoria", "NombreCategoria"))"></select>
-                    <span asp-validation-for="CodigoCategoria" class="text-danger"></span>
+                    <label for="formGroupExampleInput" hidden="hidden">Categoría</label>
+                    <select asp-for="CodigoCategoria" hidden="hidden" class="form-control" id="formGroupExampleInput" asp-items="@(new SelectList(ViewBag.Categoria, "CodigoCategoria", "NombreCategoria"))"></select>
+                    <span asp-validation-for="CodigoCategoria" hidden="hidden" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <label for="formGroupExampleInput" hidden="hidden">Stock</label>
@@ -50,9 +52,10 @@
                     <span asp-validation-for="StockProducto" hidden="hidden" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label for="formGroupExampleInput">Precio</label>
-                    <input disabled asp-for="PrecioProducto" class="form-control" id="formGroupExampleInput">
-                    <span asp-validation-for="PrecioProducto" class="text-danger"></span>
+                    <label for="formGroupExampleInput">Precio en soles</label><br/>
+                    <label for="formGroupExampleInput">@Model.PrecioProducto</label>
+                    <input asp-for="PrecioProducto" hidden="hidden" class="form-control" id="formGroupExampleInput">
+                    <span asp-validation-for="PrecioProducto" hidden="hidden" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <label for="formGroupExampleInput">Cantidad a escoger</label>

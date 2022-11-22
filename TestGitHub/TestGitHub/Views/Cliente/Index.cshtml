@@ -25,18 +25,21 @@
         <div>
             <h3 class="text-center fs-1 fw-bold">FAST</h3>
         </div>
-        <form class="form-signin" action="/Cliente/ValidarCliente" method="post">
-            <label class="sr-only">Correo eléctronico</label>
-            <input type="text" asp-for="EmailCliente" class="form-control justify-content-center align-items-center" placeholder="Ingrese su correo electronico" id="username" />
-            <span asp-validation-for="EmailCliente" class="text-danger"></span>
-            
-            <label class="sr-only">Contraseña</label>
-            <input type="password" asp-for="ContraCliente" class="form-control justify-content-center align-items-center" placeholder="Ingrese su contraseña" id="password" />
-            <span asp-validation-for="ContraCliente" class="text-danger"></span>
-            <button class="btn btn-lg btn-primary btn-block fw-semibold fst-italic" type="submit">
-                <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Sign in
-            </button>
-        </form>
+        <div class="container">
+            <form class="form-signin" action="/Cliente/ValidarCliente" method="post">
+                <label for="inputEmail" class="sr-only">Correo</label>
+                <input type="text" asp-for="EmailCliente" class="form-control" placeholder="Ingrese su correo"
+                       id="username" />
+                <span asp-validation-for="EmailCliente" class="text-danger"></span>
+                <label for="inputPassword" class="sr-only">Contraseña</label>
+                <input type="password" asp-for="ContraCliente" class="form-control" placeholder="Ingrese su contraseña"
+                       id="password" />
+                <span asp-validation-for="ContraCliente" class="text-danger"></span>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">
+                    <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Sign in
+                </button>
+            </form>
+        </div> <!-- /nuevo Log in -->
     <!--<div>
             <div>
                 <input class="justify-content-center align-items-center" type="text" placeholder=" Usuario" id="usu" required>

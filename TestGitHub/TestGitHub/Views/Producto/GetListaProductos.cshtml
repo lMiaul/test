@@ -27,6 +27,7 @@
     <tbody>
         @foreach (var item in Model)
         {
+            @Html.HiddenFor(modelItem => item.CodigoProducto);
             <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.NombreProducto)
@@ -38,17 +39,9 @@
                     @Html.DisplayFor(modelItem => item.PrecioProducto)
                 </td>
                 <td>
-                    @if (carrito != null && carrito.Contains(item))
-                    {
-                        <button disabled class="btn btn-outline-danger disabled">En carrito</button>
-                    }
-                    else
-                    {
-                        <a class="btn btn-outline-success" asp-action="GetProductos" asp-controller="Producto" asp-route-codigoProducto="@item.CodigoProducto">
-                            Añadir a carrito
-                        </a>
-                    }
-
+                    <a class="btn btn-outline-danger" asp-action="EliminarProducto" asp-controller="Producto" asp-route-cod="@item.CodigoProducto">
+                        Borrar del carrito
+                    </a>
                 </td>
             </tr>
         }

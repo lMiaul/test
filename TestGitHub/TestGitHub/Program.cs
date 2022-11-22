@@ -14,8 +14,7 @@ builder.Services.AddSingleton<HelperUploadFiles>();
 builder.Services.AddSession(options =>
 {
     options.IdleTimeout = TimeSpan.FromSeconds(3600);
-    options.Cookie.HttpOnly = true;
-    options.Cookie.IsEssential = true; 
+
 });
 /*Cadena de conexion*/
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
