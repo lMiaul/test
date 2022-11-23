@@ -12,18 +12,27 @@
     <body>
             @foreach (var item in Model)
             {
-            <div class="row"> 
-                <div class="column">
-                    <div class="card" style="width: 18rem;">
-                        <img src="@item.UrlImagen" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">@item.NombreProducto</h5>
-                            <p class="card-text">@item.DescripcionProducto</p>
-                            <a asp-action="ElegirCantidad" asp-route-id="@item.CodigoProducto" class="btn btn-primary row d-flex justify-content-center align-content-center">Ver detalle</a>
+                @if(item.StockProducto > 0){
+                    <div class="col-lg-4 col-md-6 pb-4">
+                        <!-- Card-->
+                        <div class="card bg-white rounded shadow-sm" style="border:1px solid #222">
+                            <div class="card-body px-3 pt-3 pb-1 row">
+                                <div class="col-7"><label class="float-left">@item.NombreProducto</label></div>
+                                <div class="col-5"><label class="float-right"><span class="text-info h5">@item.PrecioProducto</span></label> </div>
+                            </div>
+                            <img class="card-img-top img-fluid d-block mx-auto mb-3" src="@item.UrlImagen" alt="Imagen Card">
+                            <div class="card-body p-1 px-3 row">
+                                <div class="col-12 pt-2" style="font-size:13px; text-align:justify">
+                                    <p> @item.DescripcionProducto</p>
+                                </div>
+                                <div class="col-12 p-1">
+                                    <a asp-action="ElegirCantidad" asp-route-id="@item.CodigoProducto" class="btn btn-dark form-control btn-sm p-2" style="height:40px">Ver Detalle</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                }
+            
             }
     </body>
 </html>
