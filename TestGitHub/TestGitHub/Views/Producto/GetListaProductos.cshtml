@@ -31,23 +31,25 @@
     <tbody>
         @foreach (var item in Model)
         {
-            @Html.HiddenFor(modelItem => item.CodigoProducto);
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.NombreProducto)
-                </td>
-                <td>
-                    @item.CantidadEscogida
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PrecioProducto)
-                </td>
-                <td>
-                    <a class="btn btn-outline-danger" asp-action="EliminarProducto" asp-controller="Producto" asp-route-cod="@item.CodigoProducto">
-                        Borrar del carrito
-                    </a>
-                </td>
-            </tr>
+            
+                @Html.HiddenFor(modelItem => item.CodigoProducto);
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NombreProducto)
+                    </td>
+                    <td>
+                        @item.CantidadEscogida
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PrecioProducto)
+                    </td>
+                    <td>
+                        <a class="btn btn-outline-danger" asp-action="EliminarProducto" asp-controller="Producto" asp-route-cod="@item.CodigoProducto">
+                            Borrar del carrito
+                        </a>
+                    </td>
+                </tr>
+            
         }
     </tbody>
 </table>

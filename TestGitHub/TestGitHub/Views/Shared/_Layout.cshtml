@@ -35,28 +35,36 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Cliente" asp-action="CerrarSesion">Cerrar Sesion</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-action="Carrito" asp-controller="Producto">Carrito</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Categorías
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Producto" asp-action="Abarrotes">Abarrotes</a></li>
-                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Producto" asp-action="Bebidas">Bebidas</a></li>
-                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Producto" asp-action="Mascotas">Mascotas</a></li>
-                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Producto" asp-action="Medicamentos">Medicamentos</a></li>
-                                <li><a class="nav-link text-dark" asp-area="" asp-controller="Producto" asp-action="Higiene">Higiene</a></li>
-                            </ul>
-                        </li>
+                        @if ((HttpContextAccessor.HttpContext.Session.Get<Cliente>("scliente")) != null){
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Cliente" asp-action="CerrarSesion">Cerrar Sesion</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-action="Carrito" asp-controller="Producto">Carrito</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Categorías
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="nav-link text-dark" asp-area="" asp-controller="Producto" asp-action="Abarrotes">Abarrotes</a></li>
+                                    <li><a class="nav-link text-dark" asp-area="" asp-controller="Producto" asp-action="Bebidas">Bebidas</a></li>
+                                    <li><a class="nav-link text-dark" asp-area="" asp-controller="Producto" asp-action="Mascotas">Mascotas</a></li>
+                                    <li><a class="nav-link text-dark" asp-area="" asp-controller="Producto" asp-action="Medicamentos">Medicamentos</a></li>
+                                    <li><a class="nav-link text-dark" asp-area="" asp-controller="Producto" asp-action="Higiene">Higiene</a></li>
+                                </ul>
+                            </li>
+                        }
+                        
                         <li>
-                            @if(HttpContextAccessor.HttpContext.Session.Get<List<CarroCompra>>(WC.SessionCarroCompras) != null)
+                            @if(HttpContextAccessor.HttpContext.Session.Get<List<Producto>>(WC.SessionCarroCompras) != null)
                                 {
-                                    <a asp-action="Index" asp-controller="Carro" class="nav-link"></a>
+                                <a asp-action="GetListaProductos" asp-controller="Producto" class="nav-link">
+                                    @{
+                                        var count = HttpContextAccessor.HttpContext.Session.Get<List<Producto>>(WC.SessionCarroCompras).Count();
+                                    }
+                                        <i class="fas fa-shopping-cart"></i> &nbsp; (@count)
+                                    </a>
                                     
                             }
                             else

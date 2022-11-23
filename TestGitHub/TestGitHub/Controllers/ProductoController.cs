@@ -276,7 +276,7 @@ namespace TestGitHub.Controllers
 
         public IActionResult GetListaProductos(Producto producto)
         {
-            if (producto.CodigoProducto != null)
+            if (producto.CodigoProducto != 0)
             {
                 List<Producto> carrito;
                 if (HttpContext.Session.GetObject<List<Producto>>(WC.SessionCarroCompras) == null)
@@ -352,6 +352,23 @@ namespace TestGitHub.Controllers
             Context.SaveChanges();
         }
 
+        public void actualizarStockProducto(DetallePedido dP)
+        {
+            var productoOld = (from TProducto in Context.Productos
+                            where TProducto.CodigoProducto == dP.CodigoProducto
+                            select TProducto).SingleOrDefault();
+
+            productoOld.CodigoProducto = productoOld.CodigoProducto;
+            productoOld.NombreProducto = productoOld.NombreProducto;
+            productoOld.DescripcionProducto = productoOld.DescripcionProducto;
+            productoOld.CodigoCategoria = productoOld.CodigoCategoria;
+            productoOld.StockProducto = productoOld.StockProducto - dP.Cantidad;
+            productoOld.PrecioProducto = productoOld.PrecioProducto;
+            productoOld.UrlImagen = productoOld.UrlImagen;
+
+            Context.SaveChanges();
+        }
+
         public IActionResult HacerPedido()
         {
             float precioTotal = 0;
@@ -383,12 +400,14 @@ namespace TestGitHub.Controllers
                         Cantidad = prod.CantidadEscogida,
                         PrecioVenta = prod.PrecioProducto  
                     };
+                    
                     Context.DetallePedidos.Add(detallePedido);
+                    this.actualizarStockProducto(detallePedido);
                 }
                 Context.SaveChanges();
 
                 this.cambiarPrecioTotal(pedido, precioTotal);
-
+                
                 HttpContext.Session.Remove(WC.SessionCarroCompras);
 
                 return View("Menu");
