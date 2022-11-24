@@ -7,7 +7,7 @@
     List<Producto> carrito = Context.Session.GetObject<List<Producto>>(WC.SessionCarroCompras);
 }
 
-<h1>GetListaProductos</h1>
+<h1>Carrito</h1>
 
 <table class="table">
     <thead>
@@ -43,11 +43,7 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.PrecioProducto)
                     </td>
-                    <td>
-                        <a class="btn btn-outline-danger" asp-action="EliminarProducto" asp-controller="Producto" asp-route-cod="@item.CodigoProducto">
-                            Borrar del carrito
-                        </a>
-                    </td>
+                    
                 </tr>
             
         }

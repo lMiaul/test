@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-
+using Microsoft.AspNetCore.Http;
 using TestGitHub.Extensions;
+using TestGitHub.Utilidades;
+
 namespace TestGitHub.Controllers
 {
 
@@ -20,12 +22,28 @@ namespace TestGitHub.Controllers
         [Route("Cliente/ope/listar")]
         public IActionResult ListarClientes()
         {
-            var list = Context.Clientes;
-            return View(list);
+            var ObjSesion = HttpContext.Session.Get<Cliente>("scliente");
+            if (ObjSesion != null)
+            {
+                var list = Context.Clientes;
+                return View(list);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Cliente");
+            }
         }
         public IActionResult Registro()
         {
-            return View();
+            var ObjSesion = HttpContext.Session.Get<Cliente>("scliente");
+            if (ObjSesion != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Index", "Cliente");
+            }
         }
         public IActionResult RegistrarCliente(Cliente obj)
         {
@@ -45,12 +63,19 @@ namespace TestGitHub.Controllers
         [Route("Cliente/Edit/{Codigo}")]
         public IActionResult Edit(int codigo)
         {
+            var ObjSesion = HttpContext.Session.Get<Cliente>("scliente");
+            if (ObjSesion != null)
+            {
+                var Obj = (from Tcliente in Context.Clientes
+                           where Tcliente.IdCliente == codigo
+                           select Tcliente).Single();
 
-            var Obj = (from Tcliente in Context.Clientes
-                       where Tcliente.IdCliente == codigo
-                       select Tcliente).Single();
-
-            return View(Obj);
+                return View(Obj);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Cliente");
+            }
         }
         public IActionResult EditarClientes(Cliente ObjNew)
         {

@@ -34,7 +34,7 @@ button {
 
 #_mascotas {
     position: relative;
-    top: 500px;
+    top: 490px;
     left: 250px;
 }
 
@@ -52,7 +52,7 @@ button {
 
 #_higiene {
     position: relative;
-    top: 370px;
+    top: 345px;
     left: 550px;
 }
 
@@ -72,42 +72,42 @@ button {
     width: 150px;
     position: relative;
     top: -110px;
-    left: -50px;
+    left: 100px;
 }
 
 #img_mascotas {
     width: 150px;
     position: relative;
     top: 150px;
-    left: -75px;
+    left: 75px;
 }
 
 #img_higiene {
     width: 150px;
     position: relative;
     top: 150px;
-    left: 60px;
+    left: 210px;
 }
 
 #img_medicamentos {
     width: 150px;
     position: relative;
     top: -110px;
-    left: 30px;
+    left: 175px;
 }
 
 #img_bebidas {
     width: 150px;
     position: relative;
     top: -275px;
-    left: -405px;
+    left: -260px;
 }
 
 #img_lupa {
     width: 150px;
     position: relative;
     top: -40px;
-    left: -575px;
+    left: -445px;
 }
 
 #img_boleta {
@@ -124,12 +124,4 @@ button {
     left: -150px;
 }
 
-#btn_boleta {
-    border-radius: 50%;
-    cursor: pointer;
-}
 
-#btn_carrito {
-    border-radius: 50%;
-    cursor: pointer;
-}

@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using System.Security.Cryptography.X509Certificates;
+using TestGitHub.Utilidades;
 
 namespace TestGitHub.Controllers
 {
@@ -17,12 +19,28 @@ namespace TestGitHub.Controllers
         [Route("Repartidor/ope/listar")]
         public IActionResult ListarRepartidores()
         {
-            var list = Context.Repartidors;
-            return View(list);
+            var ObjSesion = HttpContext.Session.Get<Cliente>("scliente");
+            if (ObjSesion != null)
+            {
+                var list = Context.Repartidors;
+                return View(list);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Cliente");
+            }
         }
         public IActionResult Registro()
         {
-            return View();
+            var ObjSesion = HttpContext.Session.Get<Cliente>("scliente");
+            if (ObjSesion != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Index", "Cliente");
+            }
         }
         public IActionResult RegistrarRepartidor(Repartidor obj)
         {
@@ -40,11 +58,19 @@ namespace TestGitHub.Controllers
         [Route("Repartidor/Edit/{codigo}")]
         public IActionResult Edit(int codigo)
         {
-            var Obj = (from TRepartidor in Context.Repartidors
-                       where TRepartidor.IdRepartidor == codigo
-                       select TRepartidor).Single();
+            var ObjSesion = HttpContext.Session.Get<Cliente>("scliente");
+            if (ObjSesion != null)
+            {
+                var Obj = (from TRepartidor in Context.Repartidors
+                           where TRepartidor.IdRepartidor == codigo
+                           select TRepartidor).Single();
 
-            return View(Obj);
+                return View(Obj);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Cliente");
+            }
         }
 
         public IActionResult EditarRepartidores(Repartidor ObjNew)

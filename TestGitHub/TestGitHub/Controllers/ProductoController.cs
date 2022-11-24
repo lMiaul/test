@@ -66,28 +66,69 @@ namespace TestGitHub.Controllers
 
         public IActionResult Abarrotes()
         {
-            var list = Context.Productos;
-            return View(list);
+            var ObjSesion = HttpContext.Session.Get<Cliente>("scliente");
+            if (ObjSesion != null)
+            {
+                var list = Context.Productos;
+                return View(list);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Cliente");
+            }
         }
         public IActionResult Mascotas()
         {
-            var list = Context.Productos;
-            return View(list);
+            var ObjSesion = HttpContext.Session.Get<Cliente>("scliente");
+            if (ObjSesion != null)
+            {
+                var list = Context.Productos;
+                return View(list);
+            }
+            else
+            {
+                
+                return RedirectToAction("Index", "Cliente");
+            }
         }
         public IActionResult Bebidas()
         {
-            var list = Context.Productos;
-            return View(list);
+            var ObjSesion = HttpContext.Session.Get<Cliente>("scliente");
+            if (ObjSesion != null)
+            {
+                var list = Context.Productos;
+                return View(list);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Cliente");
+            }
         }
         public IActionResult Medicamentos()
         {
-            var list = Context.Productos;
-            return View(list);
+            var ObjSesion = HttpContext.Session.Get<Cliente>("scliente");
+            if (ObjSesion != null)
+            {
+                var list = Context.Productos;
+                return View(list);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Cliente");
+            }
         }
         public IActionResult Higiene()
         {
-            var list = Context.Productos;
-            return View(list);
+            var ObjSesion = HttpContext.Session.Get<Cliente>("scliente");
+            if (ObjSesion != null)
+            {
+                var list = Context.Productos;
+                return View(list);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Cliente");
+            }
         }
         public IActionResult CarritoDeCompra()
         {
@@ -101,26 +142,55 @@ namespace TestGitHub.Controllers
         {
             return View();
         }
+        public IActionResult ListarProductos()
+        {
+            var ObjSesion = HttpContext.Session.Get<Cliente>("scliente");
+            if (ObjSesion != null)
+            {
+                var list = Context.Productos;
+                return View(list);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Cliente");
+            }
+        }
 
         [Route("Producto/BuscarProducto")]
         public IActionResult Buscar()
         {
-            var list = Context.Productos;
-            return View(list);
+            var ObjSesion = HttpContext.Session.Get<Cliente>("scliente");
+            if (ObjSesion != null)
+            {
+                var list = Context.Productos;
+                return View(list);
+            }
+            else
+            {
+                
+                return RedirectToAction("Index", "Cliente");
+            }
         }
 
         public IActionResult Registro()
         {
-            ViewBag.Categoria = Context.Categorias;
-            return View();
+            var ObjSesion = HttpContext.Session.Get<Cliente>("scliente");
+            if (ObjSesion != null)
+            {
+                ViewBag.Categoria = Context.Categorias;
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Index", "Cliente");
+            }
         }
         [HttpPost]
-        public IActionResult AddProducto(Producto Obj, IFormFile image)
+        public IActionResult AddProducto(Producto Obj)
         {
             if (ModelState.IsValid)
             {
-                string UFileName = UploadedFile(image);
-                Obj.UrlImagen = UFileName;
+                
                 Context.Productos.Add(Obj);
                 Context.SaveChanges();
                 return RedirectToAction("Buscar");
@@ -148,12 +218,20 @@ namespace TestGitHub.Controllers
         [Route("Producto/Edit/{Codigo}")]
         public IActionResult Edit(int Codigo)
         {
-            ViewBag.Categoria = Context.Categorias;
+            var ObjSesion = HttpContext.Session.Get<Cliente>("scliente");
+            if (ObjSesion != null)
+            {
+                ViewBag.Categoria = Context.Categorias;
 
-            var Obj = (from Tapo in Context.Productos
-                       where Tapo.CodigoProducto == Codigo
-                       select Tapo).Single();
-            return View(Obj);
+                var Obj = (from Tapo in Context.Productos
+                           where Tapo.CodigoProducto == Codigo
+                           select Tapo).Single();
+                return View(Obj);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Cliente");
+            }
         }
         public IActionResult EditarProducto(Producto ObjNew)
         {
@@ -182,12 +260,21 @@ namespace TestGitHub.Controllers
         [Route("Producto/ElegirCantidad/{Codigo}")]
         public IActionResult ElegirCantidad(int codigo)
         {
-            ViewBag.Categoria = Context.Categorias;
-            var Obj = (from TProducto in Context.Productos
-                       where TProducto.CodigoProducto == codigo
-                       select TProducto).Single();
+            var ObjSesion = HttpContext.Session.Get<Cliente>("scliente");
+            if (ObjSesion != null)
+            {
+                ViewBag.Categoria = Context.Categorias;
+                var Obj = (from TProducto in Context.Productos
+                           where TProducto.CodigoProducto == codigo
+                           select TProducto).Single();
 
-            return View(Obj);
+                return View(Obj);
+            }
+            else
+            {
+                
+                return RedirectToAction("Index", "Cliente");
+            }
         }
 
         /*NO ESTA LEYENDO*/
@@ -276,26 +363,34 @@ namespace TestGitHub.Controllers
 
         public IActionResult GetListaProductos(Producto producto)
         {
-            if (producto.CodigoProducto != 0)
+            var ObjSesion = HttpContext.Session.Get<Cliente>("scliente");
+            if (ObjSesion != null)
             {
-                List<Producto> carrito;
-                if (HttpContext.Session.GetObject<List<Producto>>(WC.SessionCarroCompras) == null)
+                if (producto.CodigoProducto != 0)
                 {
-                    carrito = new List<Producto>();
+                    List<Producto> carrito;
+                    if (HttpContext.Session.GetObject<List<Producto>>(WC.SessionCarroCompras) == null)
+                    {
+                        carrito = new List<Producto>();
+                    }
+                    else
+                    {
+                        carrito = HttpContext.Session.GetObject<List<Producto>>(WC.SessionCarroCompras);
+                    }
+                    if (carrito.Contains(producto) == false)
+                    {
+                        carrito.Add(producto);
+                        HttpContext.Session.SetObject(WC.SessionCarroCompras, carrito);
+                    }
                 }
-                else
-                {
-                    carrito = HttpContext.Session.GetObject<List<Producto>>(WC.SessionCarroCompras);
-                }
-                if (carrito.Contains(producto) == false)
-                {
-                    carrito.Add(producto);
-                    HttpContext.Session.SetObject(WC.SessionCarroCompras, carrito);
-                }
+                /*ViewBag.Productos, it can be*/
+                var productos = HttpContext.Session.GetObject<List<Producto>>(WC.SessionCarroCompras);
+                return View(productos);
             }
-            /*ViewBag.Productos, it can be*/
-            var productos = HttpContext.Session.GetObject<List<Producto>>(WC.SessionCarroCompras);
-            return View(productos);
+            else
+            {
+                return RedirectToAction("Index", "Cliente");
+            }
         }
 
         public IEnumerable<Producto> GetProductosCarritos(List<Producto> Productos)
@@ -412,6 +507,20 @@ namespace TestGitHub.Controllers
 
                 return View("Menu");
             }
+        }
+
+        public IActionResult Agradecimiento()
+        {
+            var ObjSesion = HttpContext.Session.Get<Cliente>("scliente");
+            if (ObjSesion != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Index", "Cliente");
+            }
+            
         }
     }
 }      
