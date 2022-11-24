@@ -188,6 +188,7 @@ namespace TestGitHub.Controllers
         [HttpPost]
         public IActionResult AddProducto(Producto Obj)
         {
+            /*CantidadEscogida invalida la adicion*/
             if (ModelState.IsValid)
             {
                 
@@ -505,7 +506,7 @@ namespace TestGitHub.Controllers
                 
                 HttpContext.Session.Remove(WC.SessionCarroCompras);
 
-                return View("Menu");
+                return View("Agradecimiento");
             }
         }
 

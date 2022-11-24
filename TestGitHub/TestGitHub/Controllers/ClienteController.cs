@@ -35,15 +35,10 @@ namespace TestGitHub.Controllers
         }
         public IActionResult Registro()
         {
-            var ObjSesion = HttpContext.Session.Get<Cliente>("scliente");
-            if (ObjSesion != null)
-            {
+            
                 return View();
-            }
-            else
-            {
-                return RedirectToAction("Index", "Cliente");
-            }
+            
+            
         }
         public IActionResult RegistrarCliente(Cliente obj)
         {

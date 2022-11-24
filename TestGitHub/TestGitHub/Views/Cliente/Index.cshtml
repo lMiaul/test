@@ -27,16 +27,17 @@
         </div>
         <div class="container">
             <form class="form-signin" action="/Cliente/ValidarCliente" method="post">
-                <label for="inputEmail" class="sr-only">Correo eléctronico</label>
-                <input type="text" asp-for="EmailCliente" class="form-control" placeholder="Ingrese su correo"
+                <h2 class="form-signin-heading">Sign in</h2>
+                <label for="inputEmail" class="sr-only">Username</label>
+                <input type="text" asp-for="EmailCliente" class="form-control" placeholder="Username"
                        id="username" />
                 <span asp-validation-for="EmailCliente" class="text-danger"></span>
                 <label for="inputPassword" class="sr-only">Password</label>
-                <input type="password" asp-for="ContraCliente" class="form-control" placeholder="Ingrese su contraseña"
+                <input type="password" asp-for="ContraCliente" class="form-control" placeholder="Password"
                        id="password" />
                 <span asp-validation-for="ContraCliente" class="text-danger"></span>
                 <button class="btn btn-lg btn-primary btn-block" type="submit">
-                    <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Ingresar
+                    <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Sign in
                 </button>
             </form>
         </div> <!-- /nuevo Log in -->
